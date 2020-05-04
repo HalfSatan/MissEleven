@@ -50,7 +50,7 @@ police_siren = [
 @run_async
 @spamcheck
 def runs(update, context):
-    send_message(update.effective_message, random.choice(tl(update.effective_message(stranger_string.RUN_STRINGS))))
+    send_message(update.effective_message, random.choice(tl(update.effective_message, "RUN_STRINGS")))
 
 
 @run_async
@@ -86,11 +86,11 @@ def slap(update, context):
         user1 = "[{}](tg://user?id={})".format(context.bot.first_name, context.bot.id)
         user2 = curr_user
 
-    temp = random.choice(stranger_strings.SLAP_TEMPLATES)
-    item = random.choice(stranger_strings.ITEMS)
-    hit = random.choice(stranger_strings.HIT)
-    throw = random.choice(stranger_strings.THROW)
-    emoji = random.choice(stranger_strings.EMOJI)
+    temp = random.choice(SLAP_TEMPLATES)
+    item = random.choice(ITEMS)
+    hit = random.choice(HIT)
+    throw = random.choice(THROW)
+    emoji = random.choice(EMOJI)
 
     repl = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw, emoji=emoji)
 
@@ -120,64 +120,15 @@ def weebify(update, context):
     else:
         msg.reply_text(string)
 
-
-@run_async
-@spamcheck
-def pat(update, context):
-    args = context.args
-    chat_id = update.effective_chat.id
-    msg = str(update.message.text)
-    try:
-        msg = msg.split(" ", 1)[1]
-    except IndexError:
-        msg = ""
-    msg_id = update.effective_message.reply_to_message.message_id if update.effective_message.reply_to_message else update.effective_message.message_id
-    pats = []
-    pats = json.loads(urllib.request.urlopen(urllib.request.Request(
-    'http://headp.at/js/pats.json',
-    headers={'User-Agent': 'Mozilla/5.0 (X11; U; Linux i686) '
-         'Gecko/20071127 Firefox/2.0.0.11'}
-    )).read().decode('utf-8'))
-    if "@" in msg and len(msg) > 5:
-        context.bot.send_photo(chat_id, f'https://headp.at/pats/{urllib.parse.quote(random.choice(pats))}', caption=msg)
-    else:
-        context.bot.send_photo(chat_id, f'https://headp.at/pats/{urllib.parse.quote(random.choice(pats))}', reply_to_message_id=msg_id)
-    #if msg.from_user.username:
-    #    curr_user = "@" + escape_markdown(msg.from_user.username)
-    #else:
-    curr_user = "{}".format(mention_markdown(msg.from_user.id, msg.from_user.first_name))
-
-    user_id = extract_user(update.effective_message, args)
-    if user_id and user_id != "error":
-        slapped_user = context.bot.get_chat(user_id)
-        user1 = curr_user
-        #if slapped_user.username:
-        #    user2 = "@" + escape_markdown(slapped_user.username)
-        #else:
-        user2 = "{}".format(mention_markdown(slapped_user.id, slapped_user.first_name))
-
-    # if no target found, bot targets the sender
-    else:
-        user1 = "{}".format(mention_markdown(context.bot.id, context.bot.first_name))
-        user2 = curr_user
-
-    temp = random.choice(tl(update.effective_message(stranger_strings.SLAP_TEMPLATES)))
-    item = random.choice(tl(update.effective_message(stranger_strings.ITEMS)))
-    hit = random.choice(tl(update.effective_message(stranger_strings.HIT)))
-    throw = random.choice(tl(update.effective_message(stranger_strings.THROW)))
-
-    repl = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw)
-
-    send_message(update.effective_message, repl, parse_mode=ParseMode.MARKDOWN)
     
 @run_async
 def decide(update, context):
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
-    reply_text(random.choice(stranger_strings.DECIDE))
+    reply_text(random.choice(DECIDE))
     
 @run_async
-def toss(bot: Bot, update: Update):
-    update.message.reply_text(random.choice(stranger_strings.TOSS))
+def toss(update, context):
+    update.message.reply_text(random.choice(TOSS))
     
 @user_admin
 @run_async
