@@ -14,7 +14,6 @@ from typing import Optional, List
 from pyowm import timeutils, exceptions
 from googletrans import Translator
 import wikipedia
-from kbbi import KBBI
 import base64
 from bs4 import BeautifulSoup
 from emoji import UNICODE_EMOJI
@@ -83,15 +82,7 @@ def ping(update, context):
     ping_time = float(end_time - start_time)
     context.bot.editMessageText(chat_id=update.effective_chat.id, message_id=test.message_id,
                         text=tl(update.effective_message, "Pong!\nSpeed was: {0:.2f}s").format(round(ping_time, 2) % 60))
-	
-@run_async
-@spamcheck
-def fortune(update, context):
-    text = ""
-    if random.randint(1, 10) >= 7:
-        text += random.choice(tl(update.effective_message, "RAMALAN_FIRST"))
-    text += random.choice(tl(update.effective_message, "RAMALAN_STRINGS"))
-    send_message(update.effective_message, text)    
+	   
 
 @run_async
 @spamcheck
@@ -288,7 +279,6 @@ __mod_name__ = "🔥GHOUL🔥"
 PING_HANDLER = DisableAbleCommandHandler("ping", ping, filters=Filters.user(OWNER_ID))
 GETLINK_HANDLER = CommandHandler("getlink", getlink, pass_args=True, filters=Filters.user(OWNER_ID))
 LEAVECHAT_HANDLER = CommandHandler(["leavechat", "leavegroup", "leave"], leavechat, pass_args=True, filters=Filters.user(OWNER_ID))
-FORTUNE_HANDLER = DisableAbleCommandHandler("fortune", fortune)
 TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], translate)
 WIKIPEDIA_HANDLER = DisableAbleCommandHandler("wiki", wiki)
 UD_HANDLER = DisableAbleCommandHandler("ud", urbandictionary, pass_args=True)
@@ -298,7 +288,6 @@ COMMON_CHATS_HANDLER = CommandHandler("getchats", get_user_common_chats, pass_ar
 dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(GETLINK_HANDLER)
 dispatcher.add_handler(LEAVECHAT_HANDLER)
-dispatcher.add_handler(FORTUNE_HANDLER)
 dispatcher.add_handler(TRANSLATE_HANDLER)
 dispatcher.add_handler(WIKIPEDIA_HANDLER)
 dispatcher.add_handler(UD_HANDLER)
