@@ -16,13 +16,13 @@ from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
 import eleven.modules.stranger_strings as stranger_strings
-from eleven import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER, spamcheck
-from eleven.__main__ import STATS, USER_INFO
+from eleven import dispatcher, OWNER_ID, spamcheck
 from eleven.modules.disable import DisableAbleCommandHandler
 from eleven.modules.helper_funcs.extraction import extract_user
 from eleven.modules.helper_funcs.filters import CustomFilters
 from eleven.modules.helper_funcs.msg_types import get_message_type
 from eleven.modules.helper_funcs.misc import build_keyboard_alternate
+from eleven.modules.helper_funcs.chat_status import user_admin
 
 from eleven.modules.languages import tl
 from eleven.modules.sql import languages_sql as lang_sql
@@ -37,12 +37,20 @@ from eleven.modules.helper_funcs.alternate import send_message
 normiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 weebyfont = ['卂','乃','匚','刀','乇','下','厶','卄','工','丁','长','乚','从','𠘨','口','尸','㔿','尺','丂','丅','凵','リ','山','乂','丫','乙']
 
+#sleep how many times after each edit in 'police' 
+EDIT_SLEEP = 1
+#edit how many times in 'police' 
+EDIT_TIMES = 3
 
+police_siren = [
+            "🔴🔴🔴⬜️⬜️⬜️🔵🔵🔵\n🔴🔴🔴⬜️⬜️⬜️🔵🔵🔵\n🔴🔴🔴⬜️⬜️⬜️🔵🔵🔵",
+            "🔵🔵🔵⬜️⬜️⬜️🔴🔴🔴\n🔵🔵🔵⬜️⬜️⬜️🔴🔴🔴\n🔵🔵🔵⬜️⬜️⬜️🔴🔴🔴"
+]
 
 @run_async
 @spamcheck
 def runs(update, context):
-    send_message(update.effective_message, random.choice(tl(update.effective_message(strangers_string.RUN_STRINGS))))
+    send_message(update.effective_message, random.choice(tl(update.effective_message(stranger_string.RUN_STRINGS))))
 
 
 @run_async
@@ -170,6 +178,24 @@ def decide(update, context):
 @run_async
 def toss(bot: Bot, update: Update):
     update.message.reply_text(random.choice(stranger_strings.TOSS))
+    
+@user_admin
+@run_async
+def police(update, context):
+    msg = update.effective_message.reply_text('Police is coming!')
+    for x in range(EDIT_TIMES):
+        msg.edit_text(police_siren[x%2]) 
+        time.sleep(EDIT_SLEEP)
+    msg.edit_text('Police is here!')    
+
+@run_async
+@spamcheck
+def fortune(update, context):
+    text = ""
+    if random.randint(1, 10) >= 7:
+        text += random.choice(tl(update.effective_message, "RAMALAN_FIRST"))
+    text += random.choice(tl(update.effective_message, "RAMALAN_STRINGS"))
+    send_message(update.effective_message, text)   
 
 # /ip is for private use
 __help__ = "stranger_help"
@@ -184,6 +210,8 @@ RUNS_HANDLER = DisableAbleCommandHandler(["runs", "lari"], runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
+POLICE_HANDLER = DisableAbleCommandHandler("police", police)
+FORTUNE_HANDLER = DisableAbleCommandHandler("fortune", fortune)
 
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
@@ -191,3 +219,5 @@ dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
+dispatcher.add_handler(POLICE_HANDLER) 
+dispatcher.add_handler(FORTUNE_HANDLER)
