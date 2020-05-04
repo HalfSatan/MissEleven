@@ -179,7 +179,6 @@ __mod_name__ = "Stranger Things"
 
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, pass_args=True)
 PAT_HANDLER = DisableAbleCommandHandler("pat", pat)
-SHRUG_HANDLER = DisableAbleCommandHandler(["shrug", "shg"], shrug)
 HUG_HANDLER = DisableAbleCommandHandler("hug", hug)
 
 RUNS_HANDLER = DisableAbleCommandHandler(["runs", "lari"], runs)
@@ -191,7 +190,6 @@ dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
-dispatcher.add_handler(SHRUG_HANDLER)
 dispatcher.add_handler(HUG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
