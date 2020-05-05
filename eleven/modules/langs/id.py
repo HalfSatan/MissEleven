@@ -1685,17 +1685,16 @@ RAMALAN_STRINGS = (
 	"Semua akan berjalan sesuai rencana.",
 	"Pergilah ke suatu tempat baru.\nApa yang akan Anda temukan pasti akan mengesankan.",
 	"Ini salah satu waktu di mana Anda bertanya-tanya tentang arti hidup.",
-	"Jangan sampai dikelabui ramalan 😏"
+	"Jangan sampai dikelabui ramalan 😏",
 )
 
 RAMALAN_FIRST = (
 	"Saya bukan paranormal, tapi memang saya bisa meramal sedikit-sedikit.\n",
 	"Sebuah ramalan siap meluncur.\n",
-	"Ramalan kali ini untuk Anda.\n"
+	"Ramalan kali ini untuk Anda.\n",
 )
 
 INSULTS_STRINGS = (
-  	"Owww ... Dasar idiot.",
   	"Jangan minum dan mengetik.",
   	"Aku pikir kamu harus pulang atau lebih baik rumah sakit jiwa.",
   	"Perintah tidak ditemukan. Sama seperti otakmu.",
