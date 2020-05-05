@@ -15,7 +15,6 @@ from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-import eleven.modules.stranger_strings as stranger_strings
 from eleven import dispatcher, OWNER_ID, spamcheck
 from eleven.modules.disable import DisableAbleCommandHandler
 from eleven.modules.helper_funcs.extraction import extract_user
@@ -29,10 +28,6 @@ from eleven.modules.sql import languages_sql as lang_sql
 import eleven.modules.sql.feds_sql as feds_sql
 from eleven.modules.helper_funcs.alternate import send_message
 
-# Change language locale to Indonesia
-# Install language:
-# - sudo apt-get install language-pack-id language-pack-id-base manpages
-# locale.setlocale(locale.LC_TIME, 'id_ID.UTF-8')
 
 normiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 weebyfont = ['卂','乃','匚','刀','乇','下','厶','卄','工','丁','长','乚','从','𠘨','口','尸','㔿','尺','丂','丅','凵','リ','山','乂','丫','乙']
