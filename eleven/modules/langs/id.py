@@ -1160,6 +1160,17 @@ CATATAN: Dalam grup, hanya admin yang dapat menambah/menghapus tautan RSS ke lan
   - /toss: Tosses A coin.
   - /weebify: sebagai balasan pesan, "weebifies" pesan tersebut.
   
+Ohai, saya tahu Anda ingin tahu meme apa yang saya jual.
+Nah, ini dia.
+
+  * Beberapa perintah meme: *
+  - /stretch: Membentang vokal dalam pesan beberapa kali secara acak.
+  - /vapor: Mengubah pesan menjadi teks gelombang uap.
+  - /bify <balasan>: Membalas pesan dengan mengganti karakter acak dengan emoji B.
+  - /clap <reply>: Menambahkan clap emoji di awal, akhir, dan di setiap spasi dalam sebuah pesan.
+  - /cp <balasan>: Replika perintah mattatas copypasta.
+  - /shout <keyword>: Tulis apa pun yang ingin Anda berikan teriakan nyaring 
+ 
   *Hanya admin:*
   - /police: Cobalah;).
 """,
