@@ -123,12 +123,11 @@ def weebify(update, context):
     
 @run_async
 def decide(update, context):
-    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
-    reply_text(random.choice(DECIDE))
+    send_message(update.effective_message, random.choice(tl(update.effective_message, "DECIDE")))
     
 @run_async
 def toss(update, context):
-    update.message.reply_text(random.choice(TOSS))
+    send_message(update.effective_message, random.choice(tl(update.effective_message, "TOSS")))
     
 @user_admin
 @run_async
