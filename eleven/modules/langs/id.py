@@ -1172,6 +1172,10 @@ Nah, ini dia.
   - /clap <reply>: Menambahkan clap emoji di awal, akhir, dan di setiap spasi dalam sebuah pesan.
   - /cp <balasan>: Replika perintah mattatas copypasta.
   - /shout <keyword>: Tulis apa pun yang ingin Anda berikan teriakan nyaring 
+  
+  * Barang menyenangkan Berdasarkan API Baru *
+  - /dice - Mengirim Emoji Dadu Yang Memberi Nilai Dari 1 hingga 6
+  - /darts - Animasi Darts Baru, Harus Dicoba
  
   *Hanya admin:*
   - /police: Cobalah;).
