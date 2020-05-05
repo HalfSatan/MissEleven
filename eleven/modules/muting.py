@@ -115,7 +115,7 @@ def unmute(update, context):
         chat_id = update.effective_chat.id
         chat_name = update.effective_message.chat.title
         text = tl(update.effective_message, "This user already has the right to speak.")
-        text2 = "Dia telah disuarakan."
+        text2 = "Unmuted."
 
     check = context.bot.getChatMember(chat.id, user.id)
     if check['can_restrict_members'] == False:
