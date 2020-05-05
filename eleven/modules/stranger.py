@@ -92,11 +92,11 @@ def slap(update, context):
         user1 = "[{}](tg://user?id={})".format(context.bot.first_name, context.bot.id)
         user2 = curr_user
 
-    temp = random.choice(SLAP_TEMPLATES)
-    item = random.choice(ITEMS)
-    hit = random.choice(HIT)
-    throw = random.choice(THROW)
-    emoji = random.choice(EMOJI)
+    temp = random.choice(tl(update.effective_message, "SLAP_TEMPLATES"))
+    item = random.choice(tl(update.effective_message, "ITEMS"))
+    hit = random.choice(tl(update.effective_message, "HIT"))
+    throw = random.choice(tl(update.effective_message, "THROW"))
+    emoji = random.choice(tl(update.effective_message, "EMOJI"))
 
     repl = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw, emoji=emoji)
 
@@ -159,7 +159,7 @@ def fortune(update, context):
 # /ip is for private use
 __help__ = "stranger_help"
 
-__mod_name__ = "Stranger Things"
+__mod_name__ = "Stranger Things 👹"
 
 
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, pass_args=True)
