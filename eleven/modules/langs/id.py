@@ -953,8 +953,6 @@ Perlu diingat bahwa pesan Anda <b>HARUS</b> berisi beberapa teks selain hanya se
 	"Current stats:\n": "Statistik saat ini:\n",
 	"misc_help": """
  - /id: dapatkan ID grup saat ini. Jika digunakan dengan membalas pesan, dapatkan id pengguna itu.
- - /runs: balas string acak dari larik balasan.
- - /slap: menampar pengguna, atau ditampar jika bukan balasan.
  - /info: mendapatkan informasi tentang seorang pengguna.
  - /ping: mengecek kecepatan bot
  - /paste: Buat pasta atau url singkat menggunakan [dogbin] (https://del.dog)
@@ -1444,17 +1442,12 @@ Ini juga berfungsi dengan /goodbye.
 	"Read More": "Baca Lebih Lengkap",
 	"exclusive_help": """
  - /ping: mengecek kecepatan bot
- - /fortune: cek ramalan kamu hari ini
  - /tr <dari>-<ke> <teks>: terjemahkan teks yang ditulis atau di balas untuk bahasa apa saja ke bahasa yang dituju
  atau bisa juga dengan
  - /tr <ke> <teks>: terjemahkan teks yang ditulis atau di balas untuk bahasa apa saja ke bahasa yang dituju
  - /wiki <teks>: mencari teks yang ditulis dari sumber wikipedia
- - /kbgaul <teks>: mencari arti dan definisi yang ditulis dari kitab gaul, tulis `/kbgaul` untuk mendapatkan kata trending dan terbaik
  - /ud <teks>: cari arti dari urban dictionary
  - /thonkify <reply>/<args>: mengubah teks menjadi teks thonk (hanya mendukung huruf dan tidak ada simbol untuk saat ini).
- *Khusus | COVID-19*
-  - /covid: Didukung oleh Worldometers, Berikan statistik tentang statistik keseluruhan COVID-19.
-  - /covid <nama negara>: Didukung oleh Worldometers, Berikan statistik tentang COVID-19.
 """,
 
 # Misc
