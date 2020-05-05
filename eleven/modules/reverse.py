@@ -22,8 +22,7 @@ opener.addheaders = [('User-agent', useragent)]
 @run_async
 def reverse(update, context):
 	args = context.args
-	
-    if os.path.isfile("okgoogle.png"):
+	if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
 
     msg = update.effective_message
