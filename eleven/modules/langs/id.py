@@ -1464,6 +1464,7 @@ Ini juga berfungsi dengan /goodbye.
  - /tr <ke> <teks>: terjemahkan teks yang ditulis atau di balas untuk bahasa apa saja ke bahasa yang dituju
  - /wiki <teks>: mencari teks yang ditulis dari sumber wikipedia
  - /ud <teks>: cari arti dari urban dictionary
+ - /reverse: Melakukan pencarian gambar terbalik dari media yang dibalas.
  
  *Hanya admin::*
  - /thonkify <reply>/<args>: mengubah teks menjadi teks thonk (hanya mendukung huruf dan tidak ada simbol untuk saat ini).
