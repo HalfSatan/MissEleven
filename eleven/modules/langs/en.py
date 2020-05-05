@@ -379,7 +379,6 @@ Keep in mind that your message <b>MUST</b> contain some text other than just a b
 	"misc_help": """
  - /id: get the current group id. If used by replying to a message, gets that user's id.
  - /info: get information about a user.
- - /ping: check bot speed
  - /paste: Create a paste or a shortened url using [dogbin](https://del.dog)
  - /getpaste: Get the content of a paste or shortened url from [dogbin](https://del.dog)
  - /pastestats: Get stats of a paste or shortened url from [dogbin](https://del.dog)
@@ -461,7 +460,9 @@ NOTE: In groups, only admins can add/remove RSS links to the group's subscriptio
  - /fortune: give a fortune.
  - /decide : Randomly answers yes/no/maybe.
  - /toss : Tosses A coin.
- - /weebify: as a reply to a message, "weebifies" the message.	
+ - /weebify: as a reply to a message, "weebifies" the message.
+ 
+ *Admin only:*
  - /police : Try it ;) 
 """,
 
@@ -524,12 +525,14 @@ Note:
 - This feature may broke others bot
 """,
 	"exclusive_help": """
- - /ping: check the speed of the bot
  - /tr <from>-<to> <text>: translate text written or reply for any language to the intended language, or
  - /tr <to> <text>: translate text written or reply for any language to the intended language
  - /wiki <text>: search for text written from the wikipedia source
  - /ud <text>: search from urban dictionary
+ 
+ *Admin only:*
  - /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now)
+ - /ping: check the speed of the bot
 """
 }
 
