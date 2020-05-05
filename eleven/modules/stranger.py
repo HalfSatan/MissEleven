@@ -332,7 +332,7 @@ def clapmoji(update, context):
         
 __help__ = "stranger_help"
 
-__mod_name__ = "Stranger Things 👹"
+__mod_name__ = "𝕊𝕥𝕣𝕒𝕟𝕘𝕖𝕣 𝕋𝕙𝕚𝕟𝕘𝕤"
 
 
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, pass_args=True)
