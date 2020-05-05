@@ -1152,6 +1152,19 @@ CATATAN: Dalam grup, hanya admin yang dapat menambah/menghapus tautan RSS ke lan
 - /getsticker: balas stiker ke saya untuk mengunggah file PNG mentahnya.
 - /kang: balas stiker untuk menambahkannya ke paket Anda.
 """,
+
+# stranger things
+
+        "stranger_help": """
+  - /runs: membalas string acak dari berbagai balasan.
+  - /slap: menampar pengguna, atau ditampar jika bukan balasan.
+  - /fortune: berikan rejeki.
+  - /decide: Jawaban acak ya / tidak / mungkin.
+  - /toss: Tosses A coin.
+  - /weebify: sebagai balasan pesan, "weebifies" pesan tersebut.
+  - /police: Cobalah;).
+""",
+
 # userinfo
 	" hasn't set an info message about themselves  yet!": " belum mengatur pesan info tentang diri mereka!",
 	"You haven't set an info message about yourself yet!": "Anda belum mengatur pesan info tentang diri Anda!",
