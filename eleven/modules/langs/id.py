@@ -1159,6 +1159,8 @@ CATATAN: Dalam grup, hanya admin yang dapat menambah/menghapus tautan RSS ke lan
   - /decide: Jawaban acak ya / tidak / mungkin.
   - /toss: Tosses A coin.
   - /weebify: sebagai balasan pesan, "weebifies" pesan tersebut.
+  - /insults: balas string acak dari berbagai balasan.
+  - /abuse: sama as /insults.
   
 Ohai, saya tahu Anda ingin tahu meme apa yang saya jual.
 Nah, ini dia.
@@ -1691,3 +1693,68 @@ RAMALAN_FIRST = (
 	"Sebuah ramalan siap meluncur.\n",
 	"Ramalan kali ini untuk Anda.\n"
 )
+
+INSULTS_STRINGS = (
+  	"Owww ... Dasar idiot.",
+  	"Jangan minum dan mengetik.",
+  	"Aku pikir kamu harus pulang atau lebih baik rumah sakit jiwa.",
+  	"Perintah tidak ditemukan. Sama seperti otakmu.",
+  	"Apakah kamu sadar kamu membodohi dirimu sendiri? Rupanya tidak.",
+  	"Anda bisa mengetik lebih baik dari itu.",
+  	"Peraturan Bot 544 bagian 9 mencegahku membalas ke orang bodoh sepertimu.",
+  	"Maaf, kami tidak menjual otak.",
+  	"Percayalah, kamu tidak normal.",
+  	"Aku yakin otakmu terasa seperti baru, karena kamu tidak pernah menggunakannya.",
+  	"Jika aku ingin bunuh diri aku akan memanjat egomu dan melompat ke IQ mu.",
+  	"Zombi memakan otak ... kamu aman.",
+  	"Kamu tidak berevolusi dari kera, mereka berevolusi dari kamu.",
+  	"Kembalilah dan berbicaralah kepadaku ketika AKU kamu melebihi usiamu.",
+  	"Aku tidak mengatakan kamu bodoh, aku hanya mengatakan kamu bernasib buruk ketika harus berpikir.",
+  	"Bahasa apa yang kamu bicarakan? Karena kedengarannya seperti omong kosong.",
+  	"Kebodohan bukanlah kejahatan sehingga kamu bebas untuk pergi.",
+  	"Kamu adalah bukti bahwa evolusi BISA terbalik.",
+  	"Aku akan bertanya berapa umurmu, tapi aku tahu kamu tidak bisa menghitung setinggi itu.",
+  	"Sebagai orang luar, apa pendapatmu tentang ras manusia?",
+  	"Otak bukan segalanya. Dalam kasusmu itu bukan apa-apa.",
+  	"Biasanya orang hidup dan belajar. Kamu hanya hidup.",
+  	"Aku tidak tahu apa yang membuatmu begitu bodoh, tetapi itu benar-benar berhasil.",
+  	"Teruslah bicara, suatu hari kamu akan mengatakan sesuatu yang cerdas! (Aku ragu itu)",
+  	"Kejutkan aku, katakan sesuatu yang cerdas.",
+  	"IQ kamu lebih rendah dari ukuran sepatu kamu.",
+  	"Aduh! Neurotransmiter Anda tidak lagi berfungsi.",
+  	"Apakah kamu gila, kamu bodoh.",
+  	"Setiap orang memiliki hak untuk menjadi bodoh tetapi Anda menyalahgunakan hak istimewa.",
+  	"Maaf aku menyakiti perasaanmu ketika aku menyebutmu bodoh. Aku pikir kamu sudah tahu itu.",
+  	"Kamu harus mencoba mencicipi sianida.",
+  	"Enzimmu dimaksudkan untuk mencerna racun tikus.",
+  	"Kamu harus mencoba tidur selamanya.",
+  	"Ambil pistol dan tembak dirimu sendiri.",
+  	"Kamu bisa membuat rekor dunia dengan melompat dari pesawat tanpa parasut.",
+  	"Berhenti bicara BS dan lompat ke depan kereta peluru.",
+  	"Cobalah mandi dengan Hydrochloric Acid daripada air.",
+  	"Coba ini: jika kamu menahan nafas di bawah air selama satu jam, maka kamu dapat menahannya selamanya.",
+  	"Go Green! Berhenti menghirup Oksigen.",
+  	"Tuhan sedang mencarimu. Kau harus pergi untuk menemuinya.",
+  	"Berikan 100% milikmu. Sekarang, lakukan donor darah.",
+  	"Coba lompat dari gedung bertingkat seratus tetapi kamu hanya bisa melakukannya sekali.",
+  	"Kamu harus menyumbangkan otakmu melihat bahwa kamu tidak pernah menggunakannya.",
+  	"Relawan untuk target dalam jarak tembak.",
+  	"Tembakan kepala itu menyenangkan. Dapatkan satu untuk dirimu sendiri.",
+  	"Kamu harus mencoba berenang dengan hiu putih besar.",
+  	"Kamu harus mengecat dirimu sendiri merah dan berlari dalam maraton banteng.",
+  	"Kamu bisa tetap di bawah air selama sisa hidupmu tanpa naik kembali.",
+  	"Bagaimana kalau kamu berhenti bernapas selama 1 hari? Itu akan bagus.",
+ 	"Cobalah memprovokasi harimau saat kalian berdua berada di kandang.",
+  	"Sudahkah kamu mencoba menembak diri sendiri setinggi 100m menggunakan kanon.",
+  	"Anda harus mencoba memegang TNT di mulut Anda dan menyalakannya.",
+  	"Coba mainkan tangkapan dan lempar dengan RDX itu menyenangkan.",
+  	"Aku dengar phogine beracun tapi kurasa kamu tidak keberatan menghirupnya untuk bersenang-senang.",
+  	"Luncurkan dirimu ke luar angkasa sambil melupakan oksigen di Bumi.",
+  	"Kamu harus mencoba bermain ular dan tangga, dengan ular sungguhan dan tanpa tangga.",
+  	"Menari telanjang di beberapa kabel HT.",
+  	"True Volcano adalah kolam renang terbaik untukmu.",
+  	"Kamu harus mencoba mandi air panas di gunung berapi.",
+  	"Cobalah menghabiskan satu hari di peti mati dan itu akan menjadi milikmu selamanya.",
+  	"Pukul Uranium dengan neutron bergerak lambat di hadapanmu. Itu akan menjadi pengalaman yang berharga.",
+  	"Kamu bisa menjadi orang pertama yang menginjak matahari. Selamat mencoba.",
+)	
