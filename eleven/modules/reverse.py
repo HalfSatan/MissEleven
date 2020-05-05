@@ -93,10 +93,10 @@ def reverse(update, context):
 		fetchUrl = response.headers['Location']
 
 		if response != 400:
-			xx = bot.send_message(chat_id, "Image was successfully uploaded to Google."
+			xx = context.bot.send_message(chat_id, "Image was successfully uploaded to Google."
 										   "\nParsing source now. Maybe.", reply_to_message_id=rtmid)
 		else:
-			xx = bot.send_message(chat_id, "Google told me to go away.", reply_to_message_id=rtmid)
+			xx = context.bot.send_message(chat_id, "Google told me to go away.", reply_to_message_id=rtmid)
 			return
 
 		os.remove(imagename)
@@ -125,7 +125,7 @@ def reverse(update, context):
 			lmao = InputMediaPhoto(media=str(link))
 			imglinks.append(lmao)
 
-		bot.send_media_group(chat_id=chat_id, media=imglinks, reply_to_message_id=rtmid)
+		context.bot.send_media_group(chat_id=chat_id, media=imglinks, reply_to_message_id=rtmid)
 		xx.edit_text(f"[{guess}]({fetchUrl})\n[Visually similar images]({imgspage})", parse_mode='Markdown',
 					 disable_web_page_preview=True)
 	except TelegramError as e:
@@ -190,10 +190,6 @@ __help__ = """
 *This module uses Google Images to do a reverse image search.*
 
 - /reverse: Does a reverse image search of the media which it was replied to.
-
-*Special Feature*
-
-- /wall <word/expression> : Search word or expression what wallpaper you want. eg. : /wall naruto..
 """
 
 __mod_name__ = "Image Lookup"
