@@ -475,6 +475,10 @@ Well, here you go.
  - /cp <reply>: A replica of mattatas copypasta command.
  - /shout <keyword>: Write anything you want to give loud shout
  
+ *Fun stuffs Based On New API*
+ - /dice - Sends The Dice Emoji Which Gives Value From 1 to 6
+ - /darts - New Darts Animation, Must Have A Try
+ 
  *Admin only:*
  - /police : Try it ;) 
 """,
