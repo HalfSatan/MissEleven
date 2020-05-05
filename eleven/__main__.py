@@ -128,8 +128,8 @@ def start(update, context):
                 wiki = args[0].split("-")[1].replace('_', ' ')
                 message = update.effective_message
                 getlang = langsql.get_lang(message)
-                if getlang == "id":
-                    wikipedia.set_lang("id")
+                if getlang == "en":
+                    wikipedia.set_lang("en")
                 pagewiki = wikipedia.page(wiki)
                 judul = pagewiki.title
                 summary = pagewiki.summary
