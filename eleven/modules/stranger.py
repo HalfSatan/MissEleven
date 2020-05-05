@@ -66,7 +66,8 @@ def runs(update, context):
 @spamcheck
 def insults(update, context):
     message = update.effective_message
-    text = random.choice(tl(update.effective_message, "INSULT_STRINGS"))
+    chat = update.effective_chat
+    text = random.choice(tl(chat.id, "INSULT_STRINGS"))
 
     if message.reply_to_message:
         message.reply_to_message.reply_text(text)
