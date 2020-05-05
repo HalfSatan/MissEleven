@@ -330,7 +330,7 @@ __mod_name__ = "Stranger Things 👹"
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, pass_args=True)
 
 RUNS_HANDLER = DisableAbleCommandHandler(["runs", "lari"], runs)
-INSULTS_HANDLER = DisableAbleCommandHandler(["insults", "abuse"], insults, admin_ok=True)
+INSULTS_HANDLER = DisableAbleCommandHandler(["insults", "abuse"], insults)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
