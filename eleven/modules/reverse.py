@@ -186,14 +186,6 @@ def scam(imgspage, lim):
 	return imglinks
 
 
-__help__ = """
-*This module uses Google Images to do a reverse image search.*
-
-- /reverse: Does a reverse image search of the media which it was replied to.
-"""
-
-__mod_name__ = "Image Lookup"
-
 REVERSE_HANDLER = CommandHandler("reverse", reverse, pass_args=True, admin_ok=True)
 
 dispatcher.add_handler(REVERSE_HANDLER)
