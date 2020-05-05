@@ -53,6 +53,9 @@ police_siren = [
             "🔵🔵🔵⬜️⬜️⬜️🔴🔴🔴\n🔵🔵🔵⬜️⬜️⬜️🔴🔴🔴\n🔵🔵🔵⬜️⬜️⬜️🔴🔴🔴"
 ]
 
+WIDE_MAP = dict((i, i + 0xFEE0) for i in range(0x21, 0x7F))
+WIDE_MAP[0x20] = 0x3000
+
 @run_async
 @spamcheck
 def runs(update, context):
@@ -154,9 +157,166 @@ def fortune(update, context):
     if random.randint(1, 10) >= 7:
         text += random.choice(tl(update.effective_message, "RAMALAN_FIRST"))
     text += random.choice(tl(update.effective_message, "RAMALAN_STRINGS"))
-    send_message(update.effective_message, text)   
+    send_message(update.effective_message, text)
 
-# /ip is for private use
+    
+@spamcheck
+@run_async
+def stretch(update, context):
+    message = update.effective_message
+    if not message.reply_to_message:
+        message.reply_text("I need a message to meme.")
+    else:
+        count = random.randint(3, 10)
+        reply_text = re.sub(
+            r'([aeiouAEIOUａｅｉｏｕＡＥＩＯＵ])',
+            (r'\1' * count),
+            message.reply_to_message.text)
+        message.reply_to_message.reply_text(reply_text)
+
+
+@spamcheck
+@run_async
+def vapor(update, context):
+    args = context.args
+    message = update.effective_message
+    chat = update.effective_chat
+
+    noreply = False
+    if message.reply_to_message:
+        data = message.reply_to_message.text
+    elif args:
+        noreply = True
+        data = message.text.split(None, 1)[1]
+    else:
+        noreply = True
+        data = tl(chat.id, "I need a message to meme.")
+
+    reply_text = str(data).translate(WIDE_MAP)
+
+    if noreply:
+        message.reply_text(reply_text)
+    else:
+        message.reply_to_message.reply_text(reply_text)
+
+
+# D A N K modules by @deletescape ^^^
+# Less D A N K modules by @skittles9823 # holi fugg I did some maymays vvv
+
+
+# based on
+# https://github.com/wrxck/mattata/blob/master/plugins/copypasta.mattata
+@spamcheck
+@run_async
+def copypasta(update, context):
+    message = update.effective_message
+    if not message.reply_to_message:
+        message.reply_text("I need a message to meme.")
+    else:
+        emojis = [
+            "😂",
+            "😂",
+            "👌",
+            "✌",
+            "💞",
+            "👍",
+            "👌",
+            "💯",
+            "🎶",
+            "👀",
+            "😂",
+            "👓",
+            "👏",
+            "👐",
+            "🍕",
+            "💥",
+            "🍴",
+            "💦",
+            "💦",
+            "🍑",
+            "🍆",
+            "😩",
+            "😏",
+            "👉👌",
+            "👀",
+            "👅",
+            "😩",
+            "🚰"]
+        reply_text = random.choice(emojis)
+        # choose a random character in the message to be substituted with 🅱️
+        b_char = random.choice(message.reply_to_message.text).lower()
+        for c in message.reply_to_message.text:
+            if c == " ":
+                reply_text += random.choice(emojis)
+            elif c in emojis:
+                reply_text += c
+                reply_text += random.choice(emojis)
+            elif c.lower() == b_char:
+                reply_text += "🅱️"
+            else:
+                if bool(random.getrandbits(1)):
+                    reply_text += c.upper()
+                else:
+                    reply_text += c.lower()
+        reply_text += random.choice(emojis)
+        message.reply_to_message.reply_text(reply_text)
+
+
+@spamcheck
+@run_async
+def bmoji(update, context):
+    message = update.effective_message
+    if not message.reply_to_message:
+        message.reply_text("I need a message to meme.")
+    else:
+        # choose a random character in the message to be substituted with 🅱️
+        b_char = random.choice(message.reply_to_message.text).lower()
+        reply_text = message.reply_to_message.text.replace(
+            b_char, "🅱️").replace(b_char.upper(), "🅱️")
+        message.reply_to_message.reply_text(reply_text)  
+        
+# shitty maymay modules made by @divadsn ^^^
+@spamcheck
+@run_async
+def shout(update, context):
+    message = update.effective_message
+    chat = update.effective_chat
+    args = context.args
+
+    noreply = False
+    if message.reply_to_message:
+        data = message.reply_to_message.text
+    elif args:
+        noreply = True
+        data = " ".join(args)
+    else:
+        noreply = True
+        data = tl(chat.id, "I need a message to meme.")
+
+    msg = "```"
+    result = []
+    result.append(' '.join([s for s in data]))
+    for pos, symbol in enumerate(data[1:]):
+        result.append(symbol + ' ' + '  ' * pos + symbol)
+    result = list("\n".join(result))
+    result[0] = data[0]
+    result = "".join(result)
+    msg = "```\n" + result + "```"
+    return update.effective_message.reply_text(msg, parse_mode="MARKDOWN")
+
+@spamcheck
+@run_async
+def clapmoji(update, context):
+    message = update.effective_message
+    if not message.reply_to_message:
+        message.reply_text("I need a message to meme.")
+    else:
+        reply_text = "👏 "
+        reply_text += message.reply_to_message.text.replace(" ", " 👏 ")
+        reply_text += " 👏"
+        message.reply_to_message.reply_text(reply_text)
+
+        
 __help__ = "stranger_help"
 
 __mod_name__ = "Stranger Things 👹"
@@ -170,6 +330,12 @@ DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
 POLICE_HANDLER = DisableAbleCommandHandler("police", police)
 FORTUNE_HANDLER = DisableAbleCommandHandler("fortune", fortune)
+STRETCH_HANDLER = DisableAbleCommandHandler("stretch", stretch, pass_args=True)
+VAPOR_HANDLER = DisableAbleCommandHandler("vapor", vapor, pass_args=True)
+COPYPASTA_HANDLER = DisableAbleCommandHandler("cp", copypasta, pass_args=True)
+CLAPMOJI_HANDLER = DisableAbleCommandHandler("clap", clapmoji, pass_args=True)
+BMOJI_HANDLER = DisableAbleCommandHandler("bify", bmoji, pass_args=True)
+SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout, pass_args=True)
 
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
@@ -178,3 +344,9 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
 dispatcher.add_handler(POLICE_HANDLER) 
 dispatcher.add_handler(FORTUNE_HANDLER)
+dispatcher.add_handler(STRETCH_HANDLER)
+dispatcher.add_handler(VAPOR_HANDLER)
+dispatcher.add_handler(COPYPASTA_HANDLER)
+dispatcher.add_handler(CLAPMOJI_HANDLER)
+dispatcher.add_handler(BMOJI_HANDLER)
+dispatcher.add_handler(SHOUT_HANDLER)
