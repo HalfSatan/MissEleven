@@ -64,8 +64,14 @@ def runs(update, context):
 @run_async
 @spamcheck
 def insults(update, context):
-    send_message(update.effective_message, random.choice(tl(update.effective_message, "INSULT_STRINGS")))   
+    message = update.effective_message
+    chat = update.effective_chat
+    text = random.choice(tl(chat.id, "INSULT_STRINGS"))
 
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(text)
+    else:
+        message.reply_text(text)
 
 @run_async
 @spamcheck
@@ -168,6 +174,7 @@ def fortune(update, context):
 @spamcheck
 @run_async
 def stretch(update, context):
+    args = context.args
     message = update.effective_message
     if not message.reply_to_message:
         message.reply_text("I need a message to meme.")
