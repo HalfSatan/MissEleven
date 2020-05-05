@@ -32,6 +32,7 @@ from eleven.modules.helper_funcs.extraction import extract_user
 from eleven.modules.helper_funcs.filters import CustomFilters
 from eleven.modules.sql import languages_sql as langsql
 from eleven.modules.sql.users_sql import get_user_com_chats
+from eleven.modules.helper_funcs.chat_status import is_user_admin, user_admin
 
 
 from eleven.modules.languages import tl
@@ -74,6 +75,7 @@ def leavechat(update, context):
             return
 
 @run_async
+@user_admin
 @spamcheck
 def ping(update, context):
     start_time = time.time()
@@ -276,7 +278,7 @@ __help__ = "exclusive_help"
 
 __mod_name__ = "🔥ELEVEN Special🔥"
 
-PING_HANDLER = DisableAbleCommandHandler("ping", ping, filters=Filters.user(OWNER_ID))
+PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 GETLINK_HANDLER = CommandHandler("getlink", getlink, pass_args=True, filters=Filters.user(OWNER_ID))
 LEAVECHAT_HANDLER = CommandHandler(["leavechat", "leavegroup", "leave"], leavechat, pass_args=True, filters=Filters.user(OWNER_ID))
 TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], translate)
