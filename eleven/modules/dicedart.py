@@ -26,17 +26,9 @@ def darts(update, context):
     url = f"https://api.telegram.org/bot{TOKEN}/sendDice?chat_id={chat.id}&emoji=🎯"
     requests.get(url)
 
-__help__ = """
-*Fun stuffs Based On New API*
-
-/dice - Sends The Dice Emoji Which Gives Value From 1 to 6
-/darts - New Darts Animation, Must Have A Try
-"""
-__mod_name__ = "Dice And Darts"
-
-
 
 DICE_HANDLER = DisableAbleCommandHandler("dice", dice)
 DARTS_HANDLER = DisableAbleCommandHandler("darts", darts)
+
 dispatcher.add_handler(DICE_HANDLER)
 dispatcher.add_handler(DARTS_HANDLER)
