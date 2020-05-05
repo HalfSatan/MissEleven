@@ -14,4 +14,4 @@ alphabet_detector
 urbandict
 tldextract
 coffeehouse
-covid
+lxml
