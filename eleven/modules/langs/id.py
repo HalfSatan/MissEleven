@@ -954,7 +954,6 @@ Perlu diingat bahwa pesan Anda <b>HARUS</b> berisi beberapa teks selain hanya se
 	"misc_help": """
  - /id: dapatkan ID grup saat ini. Jika digunakan dengan membalas pesan, dapatkan id pengguna itu.
  - /info: mendapatkan informasi tentang seorang pengguna.
- - /ping: mengecek kecepatan bot
  - /paste: Buat pasta atau url singkat menggunakan [dogbin] (https://del.dog)
  - /getpaste: Dapatkan konten tempel atau url singkat dari [dogbin] (https://del.dog)
  - /pastestats: Dapatkan statistik tempel atau url singkat dari [dogbin] (https://del.dog)
@@ -1160,7 +1159,9 @@ CATATAN: Dalam grup, hanya admin yang dapat menambah/menghapus tautan RSS ke lan
   - /decide: Jawaban acak ya / tidak / mungkin.
   - /toss: Tosses A coin.
   - /weebify: sebagai balasan pesan, "weebifies" pesan tersebut.
-  - /police: Cobalah;).
+  
+  *Hanya admin:*
+  - /police: Cobalah;).
 """,
 
 # userinfo
@@ -1441,13 +1442,15 @@ Ini juga berfungsi dengan /goodbye.
 	"Read on Wikipedia": "Baca di Wikipedia",
 	"Read More": "Baca Lebih Lengkap",
 	"exclusive_help": """
- - /ping: mengecek kecepatan bot
  - /tr <dari>-<ke> <teks>: terjemahkan teks yang ditulis atau di balas untuk bahasa apa saja ke bahasa yang dituju
  atau bisa juga dengan
  - /tr <ke> <teks>: terjemahkan teks yang ditulis atau di balas untuk bahasa apa saja ke bahasa yang dituju
  - /wiki <teks>: mencari teks yang ditulis dari sumber wikipedia
  - /ud <teks>: cari arti dari urban dictionary
+ 
+ *Hanya admin::*
  - /thonkify <reply>/<args>: mengubah teks menjadi teks thonk (hanya mendukung huruf dan tidak ada simbol untuk saat ini).
+ - /ping: mengecek kecepatan bot
 """,
 
 # Misc
