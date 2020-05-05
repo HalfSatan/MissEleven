@@ -8,10 +8,11 @@ from telegram import Message, Update, Bot, User
 from telegram.ext import run_async, CommandHandler
 from eleven import dispatcher, spamcheck
 from eleven.modules.languages import tl
-from eleven.modules.helper_funcs.filters import CustomFilters
+from eleven.modules.helper_funcs.chat_status import is_user_admin, user_admin
 
 
 @spamcheck
+@user_admin
 @run_async
 def thonkify(update, context):
     args = context.args
@@ -64,6 +65,6 @@ def thonkify(update, context):
         context.bot.send_sticker(chat_id=message.chat_id, sticker=buffer)
 
 
-THONKIFY_HANDLER = CommandHandler("thonkify", thonkify, filters=CustomFilters.sudo_filter)
+THONKIFY_HANDLER = CommandHandler("thonkify", thonkify)
 
 dispatcher.add_handler(THONKIFY_HANDLER)
