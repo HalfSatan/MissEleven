@@ -22,12 +22,12 @@ opener.addheaders = [('User-agent', useragent)]
 @run_async
 def reverse(update, context):
   args = context.args
+  chat_id = update.effective_chat.id
+  rtmid = msg.message_id
+  msg = update.effective_message
   if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
-
-    msg = update.effective_message
-    chat_id = update.effective_chat.id
-    rtmid = msg.message_id
+     
     imagename = "okgoogle.png"
 
     reply = msg.reply_to_message
