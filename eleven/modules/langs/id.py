@@ -1563,17 +1563,6 @@ HIT = (
     "menampar keras",
 )
 
-TOSS = (
-    "Kepala",
-    "Ekor",
-)
-
-DECIDE = (
-    "Ya.",
-    "NoU.",
-    "Mungkin."
-)
-
 RAMALAN_STRINGS = (
 	"Tertawalah sepuasnya sebelum hal itu dilarang 😆",
 	"Bila Anda membahagiakan seseorang, Anda sendiri akan merasa bahagia.\nBegitulah dunia bekerja 😊",
