@@ -378,8 +378,6 @@ Keep in mind that your message <b>MUST</b> contain some text other than just a b
 """,
 	"misc_help": """
  - /id: get the current group id. If used by replying to a message, gets that user's id.
- - /runs: reply a random string from an array of replies.
- - /slap: slap a user, or get slapped if not a reply.
  - /info: get information about a user.
  - /ping: check bot speed
  - /paste: Create a paste or a shortened url using [dogbin](https://del.dog)
@@ -455,7 +453,18 @@ NOTE: In groups, only admins can add/remove RSS links to the group's subscriptio
 - /getsticker: reply to a sticker to me to upload its raw PNG file.
 - /kang: reply to a sticker to add it to your pack.
 """,
-	
+
+# stranger things
+        "stranger_help": """
+ - /runs: reply a random string from an array of replies.
+ - /slap: slap a user, or get slapped if not a reply.
+ - /fortune: give a fortune.
+ - /decide : Randomly answers yes/no/maybe.
+ - /toss : Tosses A coin.
+ - /weebify: as a reply to a message, "weebifies" the message.	
+ - /police : Try it ;) 
+""",
+
 # warns
 	"CURRENT_WARNING_FILTER_STRING": "<b>Current warning filters in this chat:</b>\n",
 	"warns_help": """
@@ -516,16 +525,11 @@ Note:
 """,
 	"exclusive_help": """
  - /ping: check the speed of the bot
- - /fortune: give a fortune
  - /tr <from>-<to> <text>: translate text written or reply for any language to the intended language, or
  - /tr <to> <text>: translate text written or reply for any language to the intended language
  - /wiki <text>: search for text written from the wikipedia source
  - /ud <text>: search from urban dictionary
- - /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now).
- *Special | COVID-19*
- - /covid: Powered by Worldometers, Give stats about overall stats of COVID-19.
- - /covid <country name>: Powered by Worldometers, Give stats about COVID-19.
-
+ - /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now)
 """
 }
 
