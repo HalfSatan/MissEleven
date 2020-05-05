@@ -11,8 +11,10 @@ from telegram.ext import run_async
 #eleven
 from eleven import dispatcher, updater, TOKEN, spamcheck
 from eleven.modules.disable import DisableAbleCommandHandler
+from eleven.modules.helper_funcs.chat_status import user_admin
 
 @run_async
+@user_admin
 @spamcheck
 def dice(update, context):
     chat = update.effective_chat
@@ -20,6 +22,7 @@ def dice(update, context):
     requests.get(url)
 
 @run_async
+@user_admin
 @spamcheck
 def darts(update, context):
     chat = update.effective_chat
