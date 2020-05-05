@@ -780,17 +780,6 @@ HIT = (
     "bashes",
 )
 
-TOSS = (
-    "Heads",
-    "Tails",
-)
-
-DECIDE = (
-    "Yes.",
-    "No.",
-    "Maybe.",
-)
-
 RAMALAN_STRINGS = (
 	"There’s a friend who would be happy to hear from you today\nTell them I said “Hi”",
 	"5 - 8 - 27 - 38 - 42 - 48\nWhoops! That was the back!",
