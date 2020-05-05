@@ -30,7 +30,7 @@ Perintah yang tersedia adalah:
  - /setlang: atur bahasa pilihan Anda.""",
 
 # __main__
-	"Is there anything I can help (you with)*? 😊": "Ada yang bisa saya bantu (you with)*? 😊",
+	"Is there anything I can help *{}*? 😊": "Ada yang bisa saya bantu *{}*? 😊",
 	"start_text": """
 Hai {}, nama saya {}! Saya seorang manajer grup yang dikelola oleh [master saya ini](tg://user?id={}).
 Untuk mendapatkan info status dan update bot ini, anda dapat bergabung dengan channel kami [Eleven Bot News](https://t.me/MissEleven
