@@ -1,0 +1,32 @@
+*.pyc
+.idea/
+.gitconfig
+.project
+.pydevproject
+.directory
+.vscode
+
+# Remove this shit
+eleven/__pycache__
+eleven/modules/__pycache__
+eleven/modules/helper_funcs/__pycache__
+eleven/modules/sql/__pycache__
+
+# Also remove this too
+.bash_history
+.bash_logout
+.bashrc
+.cloud-locale-test.skip
+.profile
+.pgpass
+.python_history
+cache/kangsticker.png
+cache/sticker.png
+cache/image.png
+backupdb
+hourly_backupdb
+*-Eleven.backup
+
+# Remove some configs
+eleven/config.py
+eleven/antispam.py
