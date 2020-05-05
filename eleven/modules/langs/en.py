@@ -787,8 +787,8 @@ TOSS = (
 
 DECIDE = (
     "Yes.",
-    "NoU.",
-    "Maybe."
+    "No.",
+    "Maybe.",
 )
 
 RAMALAN_STRINGS = (
