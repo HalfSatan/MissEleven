@@ -1694,7 +1694,7 @@ RAMALAN_FIRST = (
 	"Ramalan kali ini untuk Anda.\n",
 )
 
-INSULTS_STRINGS = (
+INSULT_STRINGS = (
     "Owww ... Dasar idiot.",
     "Jangan minum dan mengetik.",
     "Aku pikir kamu harus pulang atau lebih baik rumah sakit jiwa.",
