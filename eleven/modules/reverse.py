@@ -41,7 +41,7 @@ def reverse(update, context):
 		else:
 			msg.reply_text("Reply to an image or sticker to lookup.")
 			return
-		image_file = bot.get_file(file_id)
+		image_file = context.bot.get_file(file_id)
 		image_file.download(imagename)
 		if args:
 			txt = args[0]
