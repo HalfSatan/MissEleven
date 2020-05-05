@@ -32,6 +32,17 @@ from eleven.modules.helper_funcs.alternate import send_message
 normiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 weebyfont = ['卂','乃','匚','刀','乇','下','厶','卄','工','丁','长','乚','从','𠘨','口','尸','㔿','尺','丂','丅','凵','リ','山','乂','丫','乙']
 
+TOSS = (
+    "Heads",
+    "Tails",
+)
+
+DECIDE = (
+    "Yes.",
+    "No.",
+    "Maybe.",
+)
+
 #sleep how many times after each edit in 'police' 
 EDIT_SLEEP = 1
 #edit how many times in 'police' 
@@ -118,11 +129,14 @@ def weebify(update, context):
     
 @run_async
 def decide(update, context):
-    send_message(update.effective_message, random.choice(tl(update.effective_message, "DECIDE")))
+    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
+    reply_text(random.choice(DECIDE))
     
+
 @run_async
 def toss(update, context):
-    send_message(update.effective_message, random.choice(tl(update.effective_message, "TOSS")))
+    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
+    reply_text(random.choice(TOSS))
     
 @user_admin
 @run_async
