@@ -274,7 +274,7 @@ def get_user_common_chats(update, context):
 
 __help__ = "exclusive_help"
 
-__mod_name__ = "🔥GHOUL🔥"
+__mod_name__ = "🔥ELEVEN Special🔥"
 
 PING_HANDLER = DisableAbleCommandHandler("ping", ping, filters=Filters.user(OWNER_ID))
 GETLINK_HANDLER = CommandHandler("getlink", getlink, pass_args=True, filters=Filters.user(OWNER_ID))
