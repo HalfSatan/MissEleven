@@ -877,7 +877,7 @@ RAMALAN_FIRST = (
 	"One fortune, coming right up.\n"
 )
 
-INSULTS_STRINGS = (
+INSULT_STRINGS = (
 	"Owww ... Such a stupid idiot.",
 	"Don't drink and type.",
 	"I think you should go home or better a mental asylum.",
