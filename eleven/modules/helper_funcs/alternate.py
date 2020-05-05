@@ -11,7 +11,7 @@ from eleven import dispatcher, DEL_CMDS, SUDO_USERS, WHITELIST_USERS, LOGGER
 
 from eleven.modules import languages
 
-DUMP_CHAT = -1001287670948
+DUMP_CHAT = -1001167013357
 
 def send_message(message, text, target_id=None, *args,**kwargs):
 	if not target_id:
