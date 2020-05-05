@@ -62,7 +62,7 @@ def tl(message, text):
 		return text
 	elif str(getlang) in LOADED_LANGS_ID:
 		func = getattr(FUNC_LANG[getlang], getlang)
-		if text in ("RUN_STRINGS", "SLAP_TEMPLATES", "ITEMS", "THROW", "HIT", "RAMALAN_STRINGS", "RAMALAN_FIRST"):
+		if text in ("RUN_STRINGS", "SLAP_TEMPLATES", "ITEMS", "THROW", "HIT", "RAMALAN_STRINGS", "RAMALAN_FIRST", "INSULT_STRINGS"):
 			runstr = getattr(FUNC_LANG[getlang], text)
 			return runstr
 		langtxt = func.get(text)
@@ -75,7 +75,7 @@ def tl(message, text):
 		get = getattr(FUNC_LANG['en'], 'en')
 		if text in tuple(get):
 			return get.get(text)
-		if text in ("RUN_STRINGS", "SLAP_TEMPLATES", "ITEMS", "THROW", "HIT", "RAMALAN_STRINGS", "RAMALAN_FIRST"):
+		if text in ("RUN_STRINGS", "SLAP_TEMPLATES", "ITEMS", "THROW", "HIT", "RAMALAN_STRINGS", "RAMALAN_FIRST", "INSULT_STRINGS"):
 			runstr = getattr(FUNC_LANG['en'], text)
 			return runstr
 		return text
