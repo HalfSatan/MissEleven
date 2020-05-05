@@ -546,6 +546,7 @@ Note:
  - /tr <to> <text>: translate text written or reply for any language to the intended language
  - /wiki <text>: search for text written from the wikipedia source
  - /ud <text>: search from urban dictionary
+ - /reverse: Does a reverse image search of the media which it was replied to.
  
  *Admin only:*
  - /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now)
