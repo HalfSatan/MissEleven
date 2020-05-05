@@ -462,6 +462,17 @@ NOTE: In groups, only admins can add/remove RSS links to the group's subscriptio
  - /toss : Tosses A coin.
  - /weebify: as a reply to a message, "weebifies" the message.
  
+ Ohai, I see you'd like to know what memes I have for sale.
+Well, here you go.
+
+ *Some memes command:* 
+ - /stretch: Stretches vowels in a message a random number of times.
+ - /vapor: Turns a message into vaporwave text.
+ - /bify <reply>: Replying to a message with replace a random character with the B emoji.
+ - /clap <reply>: Adds clap emojis at the begining, end, and in every space in a message.
+ - /cp <reply>: A replica of mattatas copypasta command.
+ - /shout <keyword>: Write anything you want to give loud shout
+ 
  *Admin only:*
  - /police : Try it ;) 
 """,
