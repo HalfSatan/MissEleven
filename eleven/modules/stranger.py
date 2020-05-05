@@ -60,6 +60,11 @@ WIDE_MAP[0x20] = 0x3000
 @spamcheck
 def runs(update, context):
     send_message(update.effective_message, random.choice(tl(update.effective_message, "RUN_STRINGS")))
+    
+ @run_async
+@spamcheck
+def insults(update, context):
+    send_message(update.effective_message, random.choice(tl(update.effective_message, "INSULTS_STRINGS")))   
 
 
 @run_async
@@ -325,6 +330,7 @@ __mod_name__ = "Stranger Things 👹"
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, pass_args=True)
 
 RUNS_HANDLER = DisableAbleCommandHandler(["runs", "lari"], runs)
+INSULTS_HANDLER = DisableAbleCommandHandler(["insults", "abuse"], insults, admin_ok=True)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
@@ -338,6 +344,7 @@ BMOJI_HANDLER = DisableAbleCommandHandler("bify", bmoji, pass_args=True)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout, pass_args=True)
 
 dispatcher.add_handler(RUNS_HANDLER)
+dispatcher.add_handler(INSULTS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
