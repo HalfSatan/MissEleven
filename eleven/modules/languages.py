@@ -42,11 +42,11 @@ def tl(message, text):
 					sql.set_lang(message.chat.id, message.from_user.language_code)
 					getlang = message.from_user.language_code
 				else:
-					sql.set_lang(message.chat.id, 'id')
-					getlang = 'id'
+					sql.set_lang(message.chat.id, 'en')
+					getlang = 'en'
 			else:
-				sql.set_lang(message.chat.id, 'id')
-				getlang = 'id'
+				sql.set_lang(message.chat.id, 'en')
+				getlang = 'en'
 
 	getlangid = {}
 	for x in LOADED_LANGS_ID:
@@ -57,7 +57,7 @@ def tl(message, text):
 		if text in tuple(get):
 			return get.get(text)
 		if text in ("RUN_STRINGS", "SLAP_TEMPLATES", "ITEMS", "THROW", "HIT", "RAMALAN_STRINGS", "RAMALAN_FIRST"):
-			runstr = getattr(FUNC_LANG['en'], text)
+			runstr = getattr(FUNC_LANG['id'], text)
 			return runstr
 		return text
 	elif str(getlang) in LOADED_LANGS_ID:
@@ -71,8 +71,8 @@ def tl(message, text):
 			langtxt = text
 		return langtxt
 	else:
-		sql.set_lang(message.chat.id, 'id')
-		get = getattr(FUNC_LANG['id'], 'id')
+		sql.set_lang(message.chat.id, 'en')
+		get = getattr(FUNC_LANG['en'], 'en')
 		if text in tuple(get):
 			return get.get(text)
 		if text in ("RUN_STRINGS", "SLAP_TEMPLATES", "ITEMS", "THROW", "HIT", "RAMALAN_STRINGS", "RAMALAN_FIRST"):
