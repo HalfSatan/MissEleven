@@ -21,13 +21,14 @@ opener.addheaders = [('User-agent', useragent)]
 
 @run_async
 def reverse(update, context):
-  args = context.args
-  chat_id = update.effective_chat.id
-  rtmid = msg.message_id
-  msg = update.effective_message
-  if os.path.isfile("okgoogle.png"):
+	args = context.args
+	
+    if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
-     
+
+    msg = update.effective_message
+    chat_id = update.effective_chat.id
+    rtmid = msg.message_id
     imagename = "okgoogle.png"
 
     reply = msg.reply_to_message
@@ -190,6 +191,10 @@ __help__ = """
 *This module uses Google Images to do a reverse image search.*
 
 - /reverse: Does a reverse image search of the media which it was replied to.
+
+*Special Feature*
+
+- /wall <word/expression> : Search word or expression what wallpaper you want. eg. : /wall naruto..
 """
 
 __mod_name__ = "Image Lookup"
