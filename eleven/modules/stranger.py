@@ -61,7 +61,7 @@ WIDE_MAP[0x20] = 0x3000
 def runs(update, context):
     send_message(update.effective_message, random.choice(tl(update.effective_message, "RUN_STRINGS")))
     
- @run_async
+@run_async
 @spamcheck
 def insults(update, context):
     send_message(update.effective_message, random.choice(tl(update.effective_message, "INSULT_STRINGS")))   
