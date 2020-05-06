@@ -102,11 +102,8 @@ def send(update, message, keyboard, backup_message):
 @run_async
 def new_member(update, context):
 	chat = update.effective_chat  # type: Optional[Chat]
-	user = update.effective_user
-	msg = update.effective_message
 
 	should_welc, cust_welcome, cust_content, welc_type = sql.get_welc_pref(chat.id)
-	
 	cleanserv = sql.clean_service(chat.id)
 	if cleanserv:
 		new_members = update.effective_message.new_chat_members
@@ -1115,51 +1112,6 @@ def WELC_EDITBTN(update, context):
 								  reply_markup=InlineKeyboardMarkup(button))
 		context.bot.answer_callback_query(query.id)
 """
-
-#@run_async
-def whChat(update, context):
-    args = context.args
-    if args and len(args) == 1:
-        chat_id = str(args[0])
-        del args[0]
-        try:
-            banner = update.effective_user
-            context.bot.send_message(MESSAGE_DUMP,
-                     "<b>Chat WhiteList</b>" \
-                     "\n#WHCHAT" \
-                     "\n<b>Status:</b> <code>Whitelisted</code>" \
-                     "\n<b>Sudo Admin:</b> {}" \
-                     "\n<b>Chat Name:</b> {}" \
-                     "\n<b>ID:</b> <code>{}</code>".format(mention_html(banner.id, banner.first_name),userssql.get_chat_name(chat_id),chat_id), parse_mode=ParseMode.HTML)
-            sql.whitelistChat(chat_id)
-            update.effective_message.reply_text("Chat has been successfully whitelisted!")
-        except:
-            update.effective_message.reply_text("Error whitelisting chat!")
-    else:
-        update.effective_message.reply_text("Give me a valid chat id!")
-
-#@run_async
-def unwhChat(update, context):
-    args = context.args
-    if args and len(args) == 1:
-        chat_id = str(args[0])
-        del args[0]
-        try:
-            banner = update.effective_user
-            context.bot.send_message(MESSAGE_DUMP,
-                     "<b>Regression of Chat WhiteList</b>" \
-                     "\n#UNWHCHAT" \
-                     "\n<b>Status:</b> <code>Un-Whitelisted</code>" \
-                     "\n<b>Sudo Admin:</b> {}" \
-                     "\n<b>Chat Name:</b> {}" \
-                     "\n<b>ID:</b> <code>{}</code>".format(mention_html(banner.id, banner.first_name),userssql.get_chat_name(chat_id),chat_id), parse_mode=ParseMode.HTML)
-            sql.unwhitelistChat(chat_id)
-            update.effective_message.reply_text("Chat has been successfully un-whitelisted!")
-            context.bot.leave_chat(int(chat_id))
-        except:
-            update.effective_message.reply_text("Error un-whitelisting chat!")
-    else:
-        update.effective_message.reply_text("Give me a valid chat id!")
 
 __help__ = "welcome_help"
 
