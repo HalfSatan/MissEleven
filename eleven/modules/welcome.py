@@ -1125,7 +1125,7 @@ def WELC_EDITBTN(update, context):
 		context.bot.answer_callback_query(query.id)
 """
 
-@run_async
+#@run_async
 def whChat(update, context):
     args = context.args
     if args and len(args) == 1:
@@ -1147,7 +1147,7 @@ def whChat(update, context):
     else:
         update.effective_message.reply_text("Give me a valid chat id!")
 
-@run_async
+#@run_async
 def unwhChat(update, context):
     args = context.args
     if args and len(args) == 1:
