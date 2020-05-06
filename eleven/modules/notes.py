@@ -360,7 +360,7 @@ def private_note(update, context):
 				send_message(update.effective_message, tl(update.effective_message, "Private Note was *enabled*, when users get notes, the message will be sent to the PM."), parse_mode="markdown")
 		elif args[0] in ("no", "off"):
 			sql.private_note(str(chat_id), False, False)
-			send_message(update.effective_message, tl(update.effective_message, "Private Note di *non-aktifkan*, pesan catatan akan di kirim di grup."), parse_mode="markdown")
+			send_message(update.effective_message, tl(update.effective_message, "Private Note was *disabled*, notes will be sent to group."), parse_mode="markdown")
 		else:
 			send_message(update.effective_message, tl(update.effective_message, "Unrecognised argument - please use 'yes', or 'no'."))
 	else:
