@@ -130,13 +130,6 @@ class WelcomeTimeout(BASE):
 	def __repr__(self):
 		return "<User timeout '%s' in %s>" % (self.user_id, self.chat_id)
 
-class AllowedChat(BASE):
-    __tablename__ = "chat_whitelist"
-    chat_id = Column(String(14), primary_key=True)
-
-    def __init__(self, chat_id):
-        self.chat_id = str(chat_id)  # chat_id is int, make sure it is string
-
 Welcome.__table__.create(checkfirst=True)
 WelcomeButtons.__table__.create(checkfirst=True)
 GoodbyeButtons.__table__.create(checkfirst=True)
@@ -144,7 +137,6 @@ CleanServiceSetting.__table__.create(checkfirst=True)
 WelcomeSecurity.__table__.create(checkfirst=True)
 UserRestrict.__table__.create(checkfirst=True)
 WelcomeTimeout.__table__.create(checkfirst=True)
-AllowedChat.__table__.create(checkfirst=True)
 
 INSERTION_LOCK = threading.RLock()
 WELC_BTN_LOCK = threading.RLock()
@@ -153,12 +145,10 @@ CS_LOCK = threading.RLock()
 WS_LOCK = threading.RLock()
 UR_LOCK = threading.RLock()
 TO_LOCK = threading.RLock()
-ALLOWCHATLOCK = threading.RLock()
 
 CHAT_USERRESTRICT = {}
 CHAT_TIMEOUT = {}
 
-WHITELIST = set()
 
 def add_to_userlist(chat_id, user_id, is_clicked):
 	with UR_LOCK:
@@ -486,37 +476,6 @@ def __load_chat_timeout():
 
 	finally:
 		SESSION.close()
-
-def __load_whitelisted_chats_list(): # load shit to memory to be faster, and reduce disk access
-    global WHITELIST
-    try:
-        WHITELIST = {x.chat_id for x in SESSION.query(AllowedChat).all()}
-    finally:
-        SESSION.close()
-
-def whitelistChat(chat_id):
-    with ALLOWCHATLOCK:
-        chat = SESSION.query(AllowedChat).get(chat_id)
-        if not chat:
-            chat = AllowedChat(chat_id)
-            SESSION.merge(chat)
-        SESSION.commit()
-        __load_whitelisted_chats_list()
-
-
-def unwhitelistChat(chat_id):
-    with ALLOWCHATLOCK:
-        chat = SESSION.query(AllowedChat).get(chat_id)
-        if chat:
-            SESSION.delete(chat)
-        SESSION.commit()
-        __load_whitelisted_chats_list()
-
-
-def isWhitelisted(chat_id):
-    return chat_id in WHITELIST
-
-__load_whitelisted_chats_list()
 
 
 __load_chat_userrestrict()
