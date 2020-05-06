@@ -10,6 +10,7 @@ from telegram.utils.helpers import escape_markdown, mention_html, mention_markdo
 
 from eleven import dispatcher, updater, spamcheck, LOGGER
 from eleven.modules.disable import DisableAbleCommandHandler
+from eleven.modules.helper_funcs.handlers import CMD_STARTERS
 from eleven.modules.helper_funcs.chat_status import bot_admin, can_promote, user_admin, can_pin
 from eleven.modules.helper_funcs.extraction import extract_user
 from eleven.modules.helper_funcs.msg_types import get_message_type
