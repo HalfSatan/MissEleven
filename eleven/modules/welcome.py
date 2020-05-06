@@ -107,15 +107,6 @@ def new_member(update, context):
 
 	should_welc, cust_welcome, cust_content, welc_type = sql.get_welc_pref(chat.id)
 	
-	isAllowed = sql.isWhitelisted(str(chat.id))
-	
-	if isAllowed or user.id in SUDO_USERS:
-		sql.whitelistChat(str(chat.id))
-	else:
-		msg.reply_text("Thanks for adding me to your group! But this group is not whitelisted to use the bot, sorry.\n\nFollow Eleven Official Support. @MissElevenSupport")
-		context.bot.leave_chat(int(chat.id))
-		return
-	
 	cleanserv = sql.clean_service(chat.id)
 	if cleanserv:
 		new_members = update.effective_message.new_chat_members
@@ -1190,9 +1181,6 @@ SECURITY_BUTTONTXT_HANDLER = CommandHandler("setmutetext", security_text, pass_a
 SECURITY_BUTTONRESET_HANDLER = CommandHandler("resetmutetext", security_text_reset, filters=Filters.group)
 CLEAN_SERVICE_HANDLER = CommandHandler("cleanservice", cleanservice, pass_args=True, filters=Filters.group)
 
-WHCHAT_HANDLER = CommandHandler("whchat", whChat, pass_args=True, filters=CustomFilters.sudo_filter)
-UNWHCHAT_HANDLER = CommandHandler("unwhchat", unwhChat, pass_args=True, filters=CustomFilters.sudo_filter)
-
 welcomesec_callback_handler = CallbackQueryHandler(check_bot_button, pattern=r"check_bot_")
 # WELC_BTNSET_HANDLER = CallbackQueryHandler(WELC_EDITBTN, pattern=r"set_welc")
 
@@ -1211,9 +1199,6 @@ dispatcher.add_handler(SECURITY_MUTE_HANDLER)
 dispatcher.add_handler(SECURITY_BUTTONTXT_HANDLER)
 dispatcher.add_handler(SECURITY_BUTTONRESET_HANDLER)
 dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
-
-dispatcher.add_handler(WHCHAT_HANDLER)
-dispatcher.add_handler(UNWHCHAT_HANDLER)
 
 dispatcher.add_handler(welcomesec_callback_handler)
 #dispatcher.add_handler(WELC_BTNSET_HANDLER)
