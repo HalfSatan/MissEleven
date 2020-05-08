@@ -21,3 +21,4 @@ PyAML
 markdown2
 aiohttp
 tldextract
+pytz
