@@ -1054,6 +1054,7 @@ Sebuah tombol dapat ditambahkan ke catatan dengan menggunakan sintaks markdown s
 bagian `buttonurl:`, Seperti: `[tulisannya](buttonurl:contoh.com)`. Cek /markdownhelp untuk info lebih lanjut.
  - /save <notename>: simpan pesan yang dijawab sebagai catatan dengan nama nama file
  - /clear <notename>: hapus catatan dengan nama ini
+ - /clearall: Bersihkan semua catatan dalam grup Anda, hanya gunakan ini jika Anda tahu apa yang Anda lakukan
  - /privatenote <on/yes/off/no> <?del>: apakah atau tidak untuk mengirim catatan di PM. Tulis `del` di samping on/off untuk menghapus pesan hashtag pada grup.
 """,
 	"Turned on reporting! You'll be notified whenever anyone reports something.": "Menghidupkan pelaporan! Anda akan diberi tahu setiap kali ada yang melaporkan sesuatu.",
