@@ -1471,6 +1471,7 @@ Ini juga berfungsi dengan /goodbye.
  *Hanya admin::*
  - /thonkify <reply>/<args>: mengubah teks menjadi teks thonk (hanya mendukung huruf dan tidak ada simbol untuk saat ini).
  - /ping: mengecek kecepatan bot
+ - /tts <your text>: ubah teks menjadi audio.
 """,
 
 # Misc

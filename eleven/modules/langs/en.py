@@ -553,6 +553,7 @@ Note:
  *Admin only:*
  - /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now)
  - /ping: check the speed of the bot
+ - /tts <your text>: convert text to audio.
 """
 }
 
