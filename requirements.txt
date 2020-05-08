@@ -22,3 +22,4 @@ markdown2
 aiohttp
 tldextract
 pytz
+gtts
