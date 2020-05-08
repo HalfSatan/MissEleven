@@ -15,3 +15,9 @@ urbandict
 tldextract
 coffeehouse
 lxml
+python-rapidjson
+hurry.filesize
+PyAML
+markdown2
+aiohttp
+tldextract
