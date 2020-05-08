@@ -593,6 +593,7 @@ Atur grup anda via PM dengan mudah.
  - /filter <kata kunci> <pesan balasan>: tambahkan filter ke obrolan ini. Bot sekarang akan membalas pesan itu jika 'kata kunci' disebutkan. Jika Anda membalas stiker dengan kata kunci, bot akan membalas dengan stiker itu.
 CATATAN: semua filter kata kunci dalam huruf kecil. Jika Anda ingin kata kunci Anda menjadi kalimat, gunakan tanda kutip. seperti: /filter "hei di sana" ada apa?
  - /stop <kata kunci filter>: hentikan filter itu.
+ - /stopall: Hentikan semua filter, harus pemilik obrolan untuk melakukannya. Gunakan ini hanya saat Anda tahu apa yang Anda lakukan.
 """,
 
 # disable
