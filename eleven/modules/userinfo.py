@@ -82,20 +82,24 @@ def about_bio(update, context):
 @run_async
 @spamcheck
 def set_about_bio(update, context):
-    message = update.effective_message  # type: Optional[Message]
-    sender = update.effective_user  # type: Optional[User]
+    message = update.effective_message
+    sender_id = update.effective_user.id
+
     if message.reply_to_message:
         repl_message = message.reply_to_message
         user_id = repl_message.from_user.id
+
         if user_id == message.from_user.id:
             send_message(update.effective_message, tl(update.effective_message, "Ha, you can't set your own bio! You're at the mercy of others here..."))
             return
-        elif user_id == bot.id and sender.id not in SUDO_USERS:
+
+        if user_id == bot.id and sender_id not in SUDO_USERS:
             send_message(update.effective_message, tl(update.effective_message, "Erm... yeah, I only trust sudo users to set my bio."))
             return
 
         text = message.text
         bio = text.split(None, 1)  # use python's maxsplit to only remove the cmd, hence keeping newlines.
+
         if len(bio) == 2:
             if len(bio[1]) < MAX_MESSAGE_LENGTH // 4:
                 sql.set_user_bio(user_id, bio[1])
