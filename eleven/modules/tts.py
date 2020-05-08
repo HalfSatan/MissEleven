@@ -26,7 +26,7 @@ def tts(update, context):
 	filename = datetime.now().strftime("%d%m%y-%H%M%S%f")
 	reply = " ".join(args)
 	update.message.chat.send_action(ChatAction.RECORD_AUDIO)
-	lang="hi"
+	lang="ml"
 	tts = gTTS(reply, lang)
 	tts.save("k.mp3")
 	with open("k.mp3", "rb") as f:
@@ -40,11 +40,6 @@ def tts(update, context):
 	with open("k.mp3", "rb") as speech:
 		update.message.reply_voice(speech, quote=False)
 
-
-	__help__ = """ Text to speech
-	- /tts <your text>
-	"""
-	__mod_name__ = "tts"
 
 TTS_HANDLER = DisableAbleCommandHandler("tts", tts, pass_args=True, admin_ok=True)
 
