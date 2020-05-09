@@ -7,6 +7,7 @@ from telegram.ext import CommandHandler, CallbackQueryHandler, run_async
 import eleven.modules.sql.global_bans_sql as gban_sql
 import eleven.modules.sql.users_sql as user_sql
 from eleven import dispatcher, OWNER_ID
+from eleven.modules.helper_funcs.filters import CustomFilters
 
 
 def get_invalid_chats(bot: Bot, update: Update, remove: bool = False):
@@ -191,8 +192,8 @@ def callback_button(update, context):
             query.answer("You are not allowed to use this.")
 
 
-DB_CLEANUP_HANDLER = CommandHandler("dbcleanup", dbcleanup)
-LEAVE_MUTED_CHATS_HANDLER = CommandHandler("leavemutedchats", leave_muted_chats)
+DB_CLEANUP_HANDLER = CommandHandler("dbcleanup", dbcleanup, filters=Filters.chat(OWNER_ID))
+LEAVE_MUTED_CHATS_HANDLER = CommandHandler("leavemutedchats", leave_muted_chats, filters=Filters.chat(OWNER_ID))
 BUTTON_HANDLER = CallbackQueryHandler(callback_button, pattern='db_.*')
 
 dispatcher.add_handler(DB_CLEANUP_HANDLER)
