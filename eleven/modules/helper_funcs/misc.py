@@ -5,7 +5,6 @@ from telegram import MAX_MESSAGE_LENGTH, InlineKeyboardButton, Bot, ParseMode
 from telegram.error import TelegramError
 
 from eleven import LOAD, NO_LOAD
-from eleven.modules.languages import tl
 
 
 class EqInlineKeyboardButton(InlineKeyboardButton):
