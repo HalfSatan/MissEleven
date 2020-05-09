@@ -9,9 +9,9 @@ from telegram import Message, Chat, User, Update, Bot
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from telegram.error import BadRequest, Unauthorized, RetryAfter
 
-from tg_bot import dispatcher, AI_API_KEY, OWNER_ID
-import tg_bot.modules.sql.chatbot_sql as sql
-from tg_bot.modules.helper_funcs.filters import CustomFilters
+from eleven import dispatcher, AI_API_KEY, OWNER_ID
+import eleven.modules.sql.chatbot_sql as sql
+from eleven.modules.helper_funcs.filters import CustomFilters
 
 
 CoffeeHouseAPI = API(AI_API_KEY)
