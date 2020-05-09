@@ -2,7 +2,7 @@ from time import sleep
 
 from telegram import Bot, Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.error import BadRequest, Unauthorized
-from telegram.ext import CommandHandler, CallbackQueryHandler, run_async
+from telegram.ext import CommandHandler, CallbackQueryHandler, run_async, Filters
 
 import eleven.modules.sql.global_bans_sql as gban_sql
 import eleven.modules.sql.users_sql as user_sql
