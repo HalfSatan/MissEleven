@@ -114,8 +114,8 @@ Note that files/photos from other bots can't be imported due to telegram restric
  - /skick <userhandle>: silent kick a user, bot will not reply and delete your skick message.
 """,
 	"blacklist_help": """
-Blacklists are used to stop certain triggers from being said in a group. Any time the trigger is mentioned, \
-the message will immediately be deleted. A good combo is sometimes to pair this up with warn filters!
+*Blacklists are used to stop certain triggers from being said in a group. Any time the trigger is mentioned, \
+the message will immediately be deleted. A good combo is sometimes to pair this up with warn filters!*
 
 *NOTE:* blacklists do not affect group admins.
  - /blacklist: View the current blacklisted words.
@@ -127,25 +127,24 @@ lines will allow you to add multiple triggers.
 multiple triggers at once.
  - /rmblacklist <triggers>: Same as above.
 
-Domain blacklisting is used to stop certain domains from being mentioned in a group, Any time an url on that domain is mentioned, /
-the message will immediately be deleted.
+*Domain blacklisting is used to stop certain domains from being mentioned in a group, Any time an url on that domain is mentioned, /
+the message will immediately be deleted.*
 
 *NOTE:* domain blacklisting do not affect group admins.
 
  - /geturl: View the current blacklisted urls
 
 *Admin only:*
-
  - /addurl <urls>: Add a domain to the blacklist. The bot will automatically parse the url.
  - /delurl <urls>: Remove urls from the blacklist
 
-Blacklist sticker is used to stop certain stickers. Whenever a sticker is sent, the message will be deleted immediately.
+*Blacklist sticker is used to stop certain stickers. Whenever a sticker is sent, the message will be deleted immediately.*
 
 *NOTE:* Blacklist stickers do not affect the group admin.
 
  - /blsticker: See current blacklisted sticker.
 
-*Only admin:*
+*Admin only:*
  - /addblsticker <sticker link>: Add the sticker trigger to the black list. Can be added via reply sticker.
  - /unblsticker <sticker link>: Remove triggers from blacklist. The same newline logic applies here, so you can delete multiple triggers at once.
  - /rmblsticker <sticker link>: Same as above.
