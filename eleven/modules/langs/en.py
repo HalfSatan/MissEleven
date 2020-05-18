@@ -3,15 +3,14 @@ __lang__ = "🇺🇸 English"
 en = {
 # main stuff
 	"start_text": """
-Hi {}, my name is {}! I am a group manager managed by [my master](tg://user?id={}).
-To get this bot status info and update, you can join our channel [Eleven Bot News](https://t.me/MissEleven)
+Hi {}! My name is *{}* - I'm here to help you manage your groups!
+Click Help button to find out more about how to use me to my full potential.
 
-Any issue or need more help?
-Join our group [Eleven Official Support](https://t.me/MissElevenSupport)!
+Follow [Eleven](https://t.me/MissEleven) ( @MissEleven ) if you want to keep up with the news, updates and bot downtime!
 
-You can find the list of available commands with /help.
+This bot is managed by [サタン](https://t.me/Half_SATAN)
 
-If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
+Want to add me to your group? [Click here!](t.me/MissElevenBot?startgroup=true)
 """,
 	"help_text": """
 Hey there! My name is *Eleven*.
