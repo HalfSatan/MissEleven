@@ -355,7 +355,7 @@ def __stats__():
 															sql.num_blacklist_filter_chats())
 
 
-__mod_name__ = "Word Blacklists"
+__mod_name__ = "Blacklists"
 
 __help__ = "blacklist_help"
 
