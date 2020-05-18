@@ -83,20 +83,6 @@ When marked as AFK, any mentions will be replied to with a message to say you're
 	`3h` = 4 hours
 	`2d` = 2 days
 	`1w` = 1 week
-""",
-	
-	"urlblacklist_help": """
-Domain blacklisting is used to stop certain domains from being mentioned in a group, Any time an url on that domain is mentioned, /
-the message will immediately be deleted.
-
-*NOTE:* domain blacklisting do not affect group admins.
-
-- /geturl: View the current blacklisted urls
-
-*Admin only:*
-
-- /addurl <urls>: Add a domain to the blacklist. The bot will automatically parse the url.
-- /delurl <urls>: Remove urls from the blacklist
 """,	
 
 # Direct Links
@@ -140,8 +126,19 @@ lines will allow you to add multiple triggers.
  - /unblacklist <triggers>: Remove triggers from the blacklist. Same newline logic applies here, so you can remove \
 multiple triggers at once.
  - /rmblacklist <triggers>: Same as above.
-""",
-	"blstickers_help": """
+
+Domain blacklisting is used to stop certain domains from being mentioned in a group, Any time an url on that domain is mentioned, /
+the message will immediately be deleted.
+
+*NOTE:* domain blacklisting do not affect group admins.
+
+ - /geturl: View the current blacklisted urls
+
+*Admin only:*
+
+ - /addurl <urls>: Add a domain to the blacklist. The bot will automatically parse the url.
+ - /delurl <urls>: Remove urls from the blacklist
+
 Blacklist sticker is used to stop certain stickers. Whenever a sticker is sent, the message will be deleted immediately.
 
 *NOTE:* Blacklist stickers do not affect the group admin.
