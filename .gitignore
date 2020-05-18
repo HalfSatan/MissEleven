@@ -30,3 +30,6 @@ hourly_backupdb
 # Remove some configs
 eleven/config.py
 eleven/antispam.py
+
+#Telethon stuff
+eleven.session
