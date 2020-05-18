@@ -385,6 +385,12 @@ Keep in mind that your message <b>MUST</b> contain some text other than just a b
  - /pastestats: Get stats of a paste or shortened url from [dogbin](https://del.dog)
  
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
+
+ *Admin only:*
+ - /cleanbluetext <on/off>: Delete all blue text message.
+
+Note:
+ - This feature may broke others bot
 """,
    	"msgdel_help": """
 *Admin only:*
@@ -535,13 +541,6 @@ If you want to save an image, gif, or sticker, or any other data, do the followi
 Tip: use /welcome noformat to retrieve the unformatted welcome message.
 This will retrieve the welcome message and send it without formatting it; getting you the raw markdown, allowing you to make easy edits.
 This also works with /goodbye.
-""",
-	"cleaner_help": """
-*Admin only:*
- - /cleanbluetext <on/off>: Delete all blue text message.
-
-Note:
-- This feature may broke others bot
 """,
 	"exclusive_help": """
  - /tr <from>-<to> <text>: translate text written or reply for any language to the intended language, or
