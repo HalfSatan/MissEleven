@@ -69,7 +69,7 @@ def set_blue_text_must_click(update, context):
 
 __help__ = "cleaner_help"
 
-__mod_name__ = "Cleaner"
+# __mod_name__ = "Cleaner"
 
 SET_CLEAN_BLUE_TEXT_HANDLER = DisableAbleCommandHandler("cleanbluetext", set_blue_text_must_click, pass_args=True)
 CLEAN_BLUE_TEXT_HANDLER = MessageHandler(Filters.command & Filters.group, clean_blue_text_must_click)
