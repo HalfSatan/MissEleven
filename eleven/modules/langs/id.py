@@ -352,8 +352,8 @@ Contoh nilai waktu: 4m = 4 menit, 3h = 3 jam, 6d = 6 hari, 5w = 5 minggu.""",
 	"There are `{}` blacklisted words.": "Ada `{}` kata daftar hitam.",
 	"{} blacklist triggers, across {} chats.": "{} pemicu daftar hitam, di seluruh {} obrolan.",
 	"blacklist_help": """
-Blacklist digunakan untuk menghentikan pemicu tertentu dari yang dikatakan dalam kelompok. Kapan pun pemicu disebutkan, \
-pesan akan segera dihapus. Sebuah kombo yang bagus terkadang memasangkan ini dengan filter peringatan!
+*Blacklist digunakan untuk menghentikan pemicu tertentu dari yang dikatakan dalam kelompok. Kapan pun pemicu disebutkan, \
+pesan akan segera dihapus. Sebuah kombo yang bagus terkadang memasangkan ini dengan filter peringatan!*
 
 *CATATAN:* daftar hitam tidak mempengaruhi admin grup.
 
@@ -367,20 +367,19 @@ menghapus beberapa pemicu sekaligus.
  - /rmblacklist <pemicu>: Sama seperti di atas.
 
 
-Daftar hitam domain digunakan untuk menghentikan domain tertentu agar tidak disebutkan dalam grup, Setiap kali url pada domain itu disebutkan, /
-pesan akan segera dihapus.
+*Daftar hitam domain digunakan untuk menghentikan domain tertentu agar tidak disebutkan dalam grup, Setiap kali url pada domain itu disebutkan, /
+pesan akan segera dihapus.*
 
 *CATATAN:* daftar hitam domain tidak memengaruhi admin grup.
 
 - /geturl: Lihat url yang masuk daftar hitam saat ini
 
 *Hanya admin:*
-
 - /addurl <urls>: Tambahkan domain ke daftar hitam. Bot akan secara otomatis mengurai url.
 - /delurl <urls>: Hapus url dari daftar hitam
 
 
-Daftar hitam stiker digunakan untuk menghentikan stiker tertentu. Kapan pun stiker dikirim, pesan akan segera dihapus.
+*Daftar hitam stiker digunakan untuk menghentikan stiker tertentu. Kapan pun stiker dikirim, pesan akan segera dihapus.*
 
 *CATATAN:* daftar hitam stiker tidak mempengaruhi admin grup.
 
@@ -393,7 +392,6 @@ Daftar hitam stiker digunakan untuk menghentikan stiker tertentu. Kapan pun stik
 
 Catatan:
  - `<pemicu>` bisa menjadi `https://t.me/addstickers/<pemicu>` atau hanya `<pemicu>` atau balas pesan stikernya.
-
 """,
 
 # Blacklist sticker
