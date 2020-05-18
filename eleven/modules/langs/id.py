@@ -32,16 +32,14 @@ Perintah yang tersedia adalah:
 # __main__
 	"Is there anything I can help? 😊": "Ada yang bisa saya bantu? 😊",
 	"start_text": """
-Hai {}, nama saya {}! Saya seorang manajer grup yang dikelola oleh [master saya ini](tg://user?id={}).
-Untuk mendapatkan info status dan update bot ini, anda dapat bergabung dengan channel kami [Eleven Bot News](https://t.me/MissEleven
+Hai {}!  Nama saya *{}* - Saya di sini untuk membantu Anda mengelola grup Anda!
+Klik tombol Bantuan untuk mencari tahu lebih lanjut tentang cara menggunakan saya untuk potensi penuh saya.
 
-Ada masalah atau butuh bantuan lebih?
-Gabung grup [Eleven Official Support](https://t.me/MissElevenSupport)
+Ikuti [Eleven](https://t.me/MissEleven) (@MissEleven) jika Anda ingin mengikuti berita, pembaruan, dan waktu henti bot!
 
-Anda dapat menemukan daftar perintah yang tersedia dengan /help.
+Bot ini dikelola oleh [サタン](https://t.me/Half_SATAN)
 
-Jika Anda menikmati menggunakan saya, dan/atau ingin membantu saya bertahan hidup, tekan /donate untuk membantu \
-mendanai/meningkatkan VPS saya!
+Ingin menambahkan saya ke grup Anda? [Klik di sini!](t.me/MissElevenBot?startgroup=true)
 """,
 	"help_text": """
 Hai! Nama saya adalah *Eleven*.
