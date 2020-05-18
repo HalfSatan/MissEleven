@@ -194,21 +194,6 @@ Contoh nilai waktu: 4m = 4 menit, 3h = 3 jam, 6d = 6 hari, 5w = 5 minggu.""",
     `1w` = 1 week
 """,
 	
-# URL Blacklist
-	"urlblacklist_help": """
-Daftar hitam domain digunakan untuk menghentikan domain tertentu agar tidak disebutkan dalam grup, Setiap kali url pada domain itu disebutkan, /
-pesan akan segera dihapus.
-
-*CATATAN:* daftar hitam domain tidak memengaruhi admin grup.
-
-- /geturl: Lihat url yang masuk daftar hitam saat ini
-
-*Hanya admin:*
-
-- /addurl <urls>: Tambahkan domain ke daftar hitam. Bot akan secara otomatis mengurai url.
-- /delurl <urls>: Hapus url dari daftar hitam
-""",
-
 # Direct Links
 	"directlinks_help": """
 *Modul ini memungkinkan Anda menghasilkan tautan langsung dari berbagai situs web.*
@@ -380,6 +365,35 @@ berbeda akan memungkinkan Anda menambahkan beberapa pemicu.
  - /unblacklist <pemicu>: Hapus pemicu dari daftar hitam. Logika newline yang sama berlaku di sini, sehingga Anda dapat \
 menghapus beberapa pemicu sekaligus.
  - /rmblacklist <pemicu>: Sama seperti di atas.
+
+
+Daftar hitam domain digunakan untuk menghentikan domain tertentu agar tidak disebutkan dalam grup, Setiap kali url pada domain itu disebutkan, /
+pesan akan segera dihapus.
+
+*CATATAN:* daftar hitam domain tidak memengaruhi admin grup.
+
+- /geturl: Lihat url yang masuk daftar hitam saat ini
+
+*Hanya admin:*
+
+- /addurl <urls>: Tambahkan domain ke daftar hitam. Bot akan secara otomatis mengurai url.
+- /delurl <urls>: Hapus url dari daftar hitam
+
+
+Daftar hitam stiker digunakan untuk menghentikan stiker tertentu. Kapan pun stiker dikirim, pesan akan segera dihapus.
+
+*CATATAN:* daftar hitam stiker tidak mempengaruhi admin grup.
+
+ - /blsticker: Lihat daftar hitam stiker saat ini.
+
+*Hanya admin:*
+ - /addblsticker <pemicu>: Tambahkan pemicu stiker ke daftar hitam. Dapat ditambahkan melalui balas stiker.
+ - /unblsticker <pemicu>: Hapus pemicu dari daftar hitam. Logika newline yang sama berlaku di sini, sehingga Anda dapat menghapus beberapa pemicu sekaligus.
+ - /rmblsticker <pemicu>: Sama seperti di atas.
+
+Catatan:
+ - `<pemicu>` bisa menjadi `https://t.me/addstickers/<pemicu>` atau hanya `<pemicu>` atau balas pesan stikernya.
+
 """,
 
 # Blacklist sticker
@@ -417,21 +431,6 @@ Contoh nilai waktu: 4m = 4 menit, 3h = 3 jam, 6d = 6 hari, 5w = 5 minggu.""",
 	"{} muted for {} because using '{}' which in blacklist stickers": "{} di bisukan selama {} karena menggunakan stiker '{}' yang ada di daftar hitam stiker",
 	"There are `{} `blacklisted stickers.": "Ada `{}` daftar hitam stiker.",
 	"{} blacklist stickers, across {} chats.": "{} pemicu daftar hitam stiker, di seluruh {} obrolan.",
-	"blstickers_help": """
-Daftar hitam stiker digunakan untuk menghentikan stiker tertentu. Kapan pun stiker dikirim, pesan akan segera dihapus.
-
-*CATATAN:* daftar hitam stiker tidak mempengaruhi admin grup.
-
- - /blsticker: Lihat daftar hitam stiker saat ini.
-
-*Hanya admin:*
- - /addblsticker <pemicu>: Tambahkan pemicu stiker ke daftar hitam. Dapat ditambahkan melalui balas stiker.
- - /unblsticker <pemicu>: Hapus pemicu dari daftar hitam. Logika newline yang sama berlaku di sini, sehingga Anda dapat menghapus beberapa pemicu sekaligus.
- - /rmblsticker <pemicu>: Sama seperti di atas.
-
-Catatan:
- - `<pemicu>` bisa menjadi `https://t.me/addstickers/<pemicu>` atau hanya `<pemicu>` atau balas pesan stikernya.
-""",
 
 # Connection
 	"supportcmd": """
@@ -961,10 +960,10 @@ Perlu diingat bahwa pesan Anda <b>HARUS</b> berisi beberapa teks selain hanya se
 
  - /markdownhelp: ringkasan singkat tentang cara kerja markdown di telegram - hanya dapat dipanggil dalam obrolan pribadi.
 
- *Admin only:*
+*Admin only:*
  - /cleanbluetext <on/off>: Hapus semua pesan biru.
 
- Catatan:
+Catatan:
  - Fitur ini dapat merusak bot orang lain
 """,
 
