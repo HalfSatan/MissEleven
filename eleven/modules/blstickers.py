@@ -363,9 +363,9 @@ def __stats__():
 	return tl(OWNER_ID,  "{} blacklist stickers, across {} chats.").format(sql.num_stickers_filters(),
 															sql.num_stickers_filter_chats())
 
-__help__ = "blstickers_help"
+# __help__ = "blstickers_help"
 
-__mod_name__ = "Sticker Blacklist"
+# __mod_name__ = "Sticker Blacklist"
 
 BLACKLIST_STICKER_HANDLER = DisableAbleCommandHandler("blsticker", blackliststicker, pass_args=True, admin_ok=True)
 ADDBLACKLIST_STICKER_HANDLER = DisableAbleCommandHandler("addblsticker", add_blackliststicker)
