@@ -147,9 +147,9 @@ GET_BLACKLISTED_URLS = CommandHandler("geturl", get_blacklisted_urls,
 URL_DELETE_HANDLER = MessageHandler(Filters.entity("url"), del_blacklist_url)
 
 
-__mod_name__ = "Domain Blacklists"
+# __mod_name__ = "Domain Blacklists"
 
-__help__ = "urlblacklist_help"
+# __help__ = "urlblacklist_help"
 
 dispatcher.add_handler(URL_BLACKLIST_HANDLER)
 dispatcher.add_handler(ADD_URL_BLACKLIST_HANDLER)
