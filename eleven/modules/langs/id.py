@@ -960,6 +960,12 @@ Perlu diingat bahwa pesan Anda <b>HARUS</b> berisi beberapa teks selain hanya se
  - /pastestats: Dapatkan statistik tempel atau url singkat dari [dogbin] (https://del.dog)
 
  - /markdownhelp: ringkasan singkat tentang cara kerja markdown di telegram - hanya dapat dipanggil dalam obrolan pribadi.
+
+ *Admin only:*
+ - /cleanbluetext <on/off>: Hapus semua pesan biru.
+
+ Catatan:
+ - Fitur ini dapat merusak bot orang lain
 """,
 
 # msg deleting
@@ -1330,13 +1336,6 @@ menjadi kalimat, mencakup dengan tanda kutip, seperti: `/addwarn "sangat marah" 
 	"Blue text cleaner was *enabled* in *{}*.": "Penghapus pesan biru telah di *aktifkan* di *{}*.",
 	"Blue text cleaner was *enabled*.": "Penghapus pesan biru telah di *aktifkan*.",
 	"Curent settings for Blue text cleaner at {}: *{}*": "Pengaturan untuk penghapus pesan biru saat ini di {}: *{}*",
-	"cleaner_help": """
-*Admin only:*
- - /cleanbluetext <on/off>: Hapus semua pesan biru.
-
-Catatan:
-- Fitur ini dapat merusak bot orang lain
-""",
 
 	# This is optional since it disabled by default
 	"You are not the intended user!": "Kamu bukan pengguna yang di tuju!",
