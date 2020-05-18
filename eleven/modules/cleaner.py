@@ -67,7 +67,7 @@ def set_blue_text_must_click(update, context):
 		send_message(update.effective_message, tl(update.effective_message, "Curent settings for Blue text cleaner at {}: *{}*").format(chat_name, "Enabled" if sql.is_enable(chat_id) else "Disabled"), parse_mode="markdown")
 
 
-__help__ = "cleaner_help"
+# __help__ = "cleaner_help"
 
 # __mod_name__ = "Cleaner"
 
