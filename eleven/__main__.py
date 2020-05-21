@@ -157,8 +157,8 @@ def start(update, context):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=buttons)
     else:
-    update.effective_message.reply_photo(ELEVEN_IMG,text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN
-        update.effective_message.reply_text(tl(update.effective_message, "Is there anything I can help? 😊"))
+    update.effective_message.reply_photo(ELEVEN_IMG,text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text(tl(update.effective_message, "Is there anything I can help? 😊"))
 
 
 def m_connect_button(update, context):
