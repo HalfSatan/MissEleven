@@ -156,10 +156,8 @@ def start(update, context):
                 disable_web_page_preview=True,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=buttons)
-
-    update.effective_message.reply_photo(ELEVEN_IMG,text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN
-
     else:
+    update.effective_message.reply_photo(ELEVEN_IMG,text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN
         update.effective_message.reply_text(tl(update.effective_message, "Is there anything I can help? 😊"))
 
 
