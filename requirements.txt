@@ -11,7 +11,6 @@ wikipedia
 kbbi
 Pillow
 alphabet_detector
-urbandict
 tldextract
 coffeehouse
 lxml
