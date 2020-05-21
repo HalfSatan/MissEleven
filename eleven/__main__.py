@@ -34,6 +34,8 @@ HELP_STRINGS = "help_text" #.format(dispatcher.bot.first_name, "" if not ALLOW_E
 
 DONATE_STRING = "donate_text"
 
+ELEVEN_IMG = "https://telegra.ph/file/c301b62658635d6e9e4b5.jpg"
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -154,6 +156,9 @@ def start(update, context):
                 disable_web_page_preview=True,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=buttons)
+
+	update.effective_message.reply_photo(ELEVEN_IMG,text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN
+
     else:
         update.effective_message.reply_text(tl(update.effective_message, "Is there anything I can help? 😊"))
 
