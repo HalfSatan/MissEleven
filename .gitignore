@@ -11,6 +11,7 @@ eleven/__pycache__
 eleven/modules/__pycache__
 eleven/modules/helper_funcs/__pycache__
 eleven/modules/sql/__pycache__
+eleven/elevated_users.json
 
 # Also remove this too
 .bash_history
