@@ -288,27 +288,27 @@ def echo(update, context):
             return
 
 
-@run_async
-def sudo_list(update, context):
-    reply = "<b>Sudo Users:</b>\n"
-    for sudo in SUDO_USERS:
-        user_id = int(sudo) # Ensure int
-        user = context.bot.get_chat(user_id)
-        first_name = user.first_name
-        reply += """• <a href="tg://user?id={}">{}</a>\n""".format(user_id, first_name)
-    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+#@run_async
+#def sudo_list(update, context):
+#    reply = "<b>Sudo Users:</b>\n"
+#    for sudo in SUDO_USERS:
+#        user_id = int(sudo) # Ensure int
+#        user = context.bot.get_chat(user_id)
+#        first_name = user.first_name
+#        reply += """• <a href="tg://user?id={}">{}</a>\n""".format(user_id, first_name)
+#    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-@run_async
-def support_list(update, context):
-    reply = "<b>Support Users:</b>\n"
-    for support in SUPPORT_USERS:
-        user_id = int(support) # Ensure int
-        user = context.bot.get_chat(user_id)
-        first_name = user.first_name.replace(">", ">")
-        first_name = first_name.replace("<", "<")
-        reply += """• <a href="tg://user?id={}">{}</a>\n""".format(user_id, first_name)
-    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+#@run_async
+#def support_list(update, context):
+#    reply = "<b>Support Users:</b>\n"
+#    for support in SUPPORT_USERS:
+#        user_id = int(support) # Ensure int
+#        user = context.bot.get_chat(user_id)
+#        first_name = user.first_name.replace(">", ">")
+#        first_name = first_name.replace("<", "<")
+#        reply += """• <a href="tg://user?id={}">{}</a>\n""".format(user_id, first_name)
+#    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
 @run_async
@@ -343,8 +343,8 @@ ECHO_HANDLER = CommandHandler("echo", echo, filters=Filters.user(OWNER_ID))
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 
-SUDO_LIST_HANDLER = CommandHandler("sudolist", sudo_list, filters=CustomFilters.sudo_filter)
-SUPPORT_LIST_HANDLER = CommandHandler("supportlist", support_list, filters=CustomFilters.sudo_filter)
+#SUDO_LIST_HANDLER = CommandHandler("sudolist", sudo_list, filters=CustomFilters.sudo_filter)
+#SUPPORT_LIST_HANDLER = CommandHandler("supportlist", support_list, filters=CustomFilters.sudo_filter)
 STATS_HANDLER = CommandHandler("stats", stats, filters=CustomFilters.sudo_filter)
 
 dispatcher.add_handler(ID_HANDLER)
@@ -352,8 +352,8 @@ dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
-dispatcher.add_handler(SUDO_LIST_HANDLER)
-dispatcher.add_handler(SUPPORT_LIST_HANDLER)
+#dispatcher.add_handler(SUDO_LIST_HANDLER)
+#dispatcher.add_handler(SUPPORT_LIST_HANDLER)
 dispatcher.add_handler(PASTE_HANDLER)
 dispatcher.add_handler(GET_PASTE_HANDLER)
 dispatcher.add_handler(PASTE_STATS_HANDLER)
