@@ -299,6 +299,47 @@ def removewhitelist(update, context) -> str:
         return ""
 
 
+@run_async
+def sudolist(update, context):
+    true_sudo = list(set(SUDO_USERS) - set(DEV_USERS))
+    reply = "<b>Sudo Users:</b>\n"
+    for each_user in true_sudo:
+        user_id = int(each_user)
+        try:
+            user = context.bot.get_chat(user_id)
+            reply += f"• {mention_html(user_id, user.first_name)}\n"
+        except TelegramError:
+            pass
+    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+
+
+@run_async
+def supportlist(update, context):
+    reply = "<b>Support Users:</b>\n"
+    for each_user in SUPPORT_USERS:
+        user_id = int(each_user)
+        try:
+            user = context.bot.get_chat(user_id)
+            reply += f"• {mention_html(user_id, user.first_name)}\n"
+        except TelegramError:
+            pass
+    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+
+
+@run_async
+def whitelistlist(update, context):
+    reply = "<b>Whitelist Users:</b>\n"
+    for each_user in WHITELIST_USERS:
+        user_id = int(each_user)
+        try:
+            user = context.bot.get_chat(user_id)
+
+            reply += f"• {mention_html(user_id, user.first_name)}\n"
+        except TelegramError:
+            pass
+    update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+
+
 SUDO_HANDLER = CommandHandler("addsudo", addsudo, filters=Filters.user(OWNER_ID))
 SUPPORT_HANDLER = CommandHandler("addsupport", addsupport, filters=Filters.user(OWNER_ID))
 WHITELIST_HANDLER = CommandHandler("addwhitelist", addwhitelist, filters=Filters.user(OWNER_ID))
@@ -307,6 +348,10 @@ UNSUDO_HANDLER = CommandHandler("removesudo", removesudo, filters=Filters.user(O
 UNSUPPORT_HANDLER = CommandHandler("removesupport", removesupport, filters=Filters.user(OWNER_ID))
 UNWHITELIST_HANDLER = CommandHandler("removewhitelist", removewhitelist, filters=Filters.user(OWNER_ID))
 
+WHITELISTLIST_HANDLER = CommandHandler("whitelistlist", whitelistlist)
+SUPPORTLIST_HANDLER = CommandHandler("supportlist", supportlist)
+SUDOLIST_HANDLER = CommandHandler("sudolist", sudolist)
+
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(SUPPORT_HANDLER)
 dispatcher.add_handler(WHITELIST_HANDLER)
@@ -314,3 +359,7 @@ dispatcher.add_handler(WHITELIST_HANDLER)
 dispatcher.add_handler(UNSUDO_HANDLER)
 dispatcher.add_handler(UNSUPPORT_HANDLER)
 dispatcher.add_handler(UNWHITELIST_HANDLER)
+
+dispatcher.add_handler(WHITELISTLIST_HANDLER)
+dispatcher.add_handler(SUPPORTLIST_HANDLER)
+dispatcher.add_handler(SUDOLIST_HANDLER)
