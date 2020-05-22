@@ -7,9 +7,9 @@ from telegram import Bot, Update, ParseMode, TelegramError
 from telegram.ext import CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-from tg_bot import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, OWNER_ID
-from tg_bot.modules.helper_funcs.extraction import extract_user
-from tg_bot.modules.log_channel import gloggable
+from eleven import dispatcher, WHITELIST_USERS, SUPPORT_USERS, SUDO_USERS, OWNER_ID
+from eleven.modules.helper_funcs.extraction import extract_user
+from eleven.modules.log_channel import gloggable
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(), 'eleven/elevated_users.json')
 
