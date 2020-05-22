@@ -6,7 +6,6 @@ import os
 import urllib
 import datetime
 import time
-import requests
 import pyowm
 from typing import Optional, List
 
