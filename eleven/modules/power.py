@@ -31,10 +31,9 @@ def addsudo(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
-    bot = update.effective_bot
 
     user_id = extract_user(message, args)
-    user_member = bot.getChat(user_id)
+    user_member = context.bot.getChat(user_id)
     rt = ""
 
     reply = check_user_id(user_id, bot)
@@ -84,10 +83,9 @@ def addsupport(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
-    bot = update.effective_bot
 
     user_id = extract_user(message, args)
-    user_member = bot.getChat(user_id)
+    user_member = context.bot.getChat(user_id)
     rt = ""
 
     reply = check_user_id(user_id, bot)
@@ -136,10 +134,9 @@ def addwhitelist(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
-    bot = update.effective_bot
 
     user_id = extract_user(message, args)
-    user_member = bot.getChat(user_id)
+    user_member = context.bot.getChat(user_id)
     rt = ""
 
     reply = check_user_id(user_id, bot)
@@ -189,10 +186,9 @@ def removesudo(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
-    bot = update.effective_bot
 
     user_id = extract_user(message, args)
-    user_member = bot.getChat(user_id)
+    user_member = context.bot.getChat(user_id)
 
     reply = check_user_id(user_id, bot)
     if reply:
@@ -230,10 +226,9 @@ def removesupport(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
-    bot = update.effective_bot
 
     user_id = extract_user(message, args)
-    user_member = bot.getChat(user_id)
+    user_member = context.bot.getChat(user_id)
 
     reply = check_user_id(user_id, bot)
     if reply:
@@ -271,10 +266,9 @@ def removewhitelist(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
-    bot = update.effective_bot
 
     user_id = extract_user(message, args)
-    user_member = bot.getChat(user_id)
+    user_member = context.bot.getChat(user_id)
 
     reply = check_user_id(user_id, bot)
     if reply:
