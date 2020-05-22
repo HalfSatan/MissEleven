@@ -12,6 +12,7 @@ eleven/modules/__pycache__
 eleven/modules/helper_funcs/__pycache__
 eleven/modules/sql/__pycache__
 eleven/elevated_users.json
+eleven/config.py
 
 # Also remove this too
 .bash_history
@@ -34,3 +35,5 @@ eleven/antispam.py
 
 #Telethon stuff
 eleven.session
+
+venv
