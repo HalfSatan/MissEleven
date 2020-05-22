@@ -31,6 +31,7 @@ def addsudo(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
+    bot = update.effective_bot
 
     user_id = extract_user(message, args)
     user_member = bot.getChat(user_id)
@@ -83,6 +84,7 @@ def addsupport(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
+    bot = update.effective_bot
 
     user_id = extract_user(message, args)
     user_member = bot.getChat(user_id)
@@ -134,6 +136,7 @@ def addwhitelist(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
+    bot = update.effective_bot
 
     user_id = extract_user(message, args)
     user_member = bot.getChat(user_id)
@@ -186,6 +189,7 @@ def removesudo(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
+    bot = update.effective_bot
 
     user_id = extract_user(message, args)
     user_member = bot.getChat(user_id)
@@ -226,6 +230,7 @@ def removesupport(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
+    bot = update.effective_bot
 
     user_id = extract_user(message, args)
     user_member = bot.getChat(user_id)
@@ -266,6 +271,7 @@ def removewhitelist(update, context) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
+    bot = update.effective_bot
 
     user_id = extract_user(message, args)
     user_member = bot.getChat(user_id)
