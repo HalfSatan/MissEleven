@@ -24,6 +24,7 @@ from eleven.modules.helper_funcs.chat_status import is_user_admin
 from eleven.modules.helper_funcs.misc import paginate_modules
 from eleven.modules.helper_funcs.verifier import verify_welcome
 from eleven.modules.sql import languages_sql as langsql
+import eleven.modules.helper_funcs.panel_string as HELP_PANEL_STRING
 
 from eleven.modules.connection import connect_button
 from eleven.modules.languages import set_language
@@ -33,8 +34,6 @@ PM_START_TEXT = "start_text"
 HELP_STRINGS = "help_text" #.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 DONATE_STRING = "donate_text"
-
-ELEVEN_IMG = "https://telegra.ph/file/c301b62658635d6e9e4b5.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -156,7 +155,7 @@ def start(update, context):
                 disable_web_page_preview=True,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=buttons)
-   # update.effective_message.reply_photo(ELEVEN_IMG,text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN)
+            update.effective_message.reply_photo(HELP_PANEL_STRING.ELEVEN_IMG,text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN)
     else:
     	  update.effective_message.reply_text(tl(update.effective_message, "Is there anything I can help? 😊"))
 
