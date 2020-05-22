@@ -301,9 +301,8 @@ def removewhitelist(update, context) -> str:
 
 @run_async
 def sudolist(update, context):
-    true_sudo = list(set(SUDO_USERS) - set(DEV_USERS))
     reply = "<b>Sudo Users:</b>\n"
-    for each_user in true_sudo:
+    for each_user in SUDO_USERS:
         user_id = int(each_user)
         try:
             user = context.bot.get_chat(user_id)
