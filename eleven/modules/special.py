@@ -6,7 +6,7 @@ import os
 import urllib
 import datetime
 import time
-import urbandict
+import requests
 import pyowm
 from typing import Optional, List
 
@@ -207,27 +207,14 @@ def wiki(update, context):
 @run_async
 @spamcheck
 def urbandictionary(update, context):
-    args = context.args
-    if args:
-        text = " ".join(args)
-        try:
-            mean = urbandict.define(text)
-        except Exception as err:
-            send_message(update.effective_message, "Error: " + str(err))
-            return
-        if len(mean) >= 0:
-            teks = ""
-            if len(mean) >= 3:
-                for x in range(3):
-                    teks = "*Result of {}*\n\n*{}*\n*Meaning:*\n`{}`\n\n*Example:*\n`{}`\n\n".format(text, mean[x].get("word")[:-7], mean[x].get("def"), mean[x].get("example"))
-            else:
-                for x in range(len(mean)):
-                    teks = "*Result of {}*\n\n*{}*\n**Meaning:*\n`{}`\n\n*Example:*\n`{}`\n\n".format(text, mean[x].get("word")[:-7], mean[x].get("def"), mean[x].get("example"))
-            send_message(update.effective_message, teks, parse_mode=ParseMode.MARKDOWN)
-        else:
-            send_message(update.effective_message, "{} couldn't be found in urban dictionary!".format(text), parse_mode=ParseMode.MARKDOWN)
-    else:
-        send_message(update.effective_message, "Use `/ud <text` for search meaning from urban dictionary.", parse_mode=ParseMode.MARKDOWN)
+    message = update.effective_message
+    text = message.text[len('/ud '):]
+    results = requests.get(f'http://api.urbandictionary.com/v0/define?term={text}').json()
+    try:
+        reply_text = f'*{text}*\n\n{results["list"][0]["definition"]}\n\n_{results["list"][0]["example"]}_'
+    except:
+        reply_text = "No results found."
+    message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
 
 
 @run_async
