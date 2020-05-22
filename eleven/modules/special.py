@@ -32,6 +32,7 @@ from eleven.modules.helper_funcs.filters import CustomFilters
 from eleven.modules.sql import languages_sql as langsql
 from eleven.modules.sql.users_sql import get_user_com_chats
 from eleven.modules.helper_funcs.chat_status import is_user_admin, user_admin
+import eleven.__main__ as elevenv
 
 
 from eleven.modules.languages import tl
@@ -261,6 +262,15 @@ def get_user_common_chats(update, context):
             msg.reply_document(f)
         os.remove("common_chats.txt")
 
+@run_async
+def status(update, context):
+    reply = "*Eleven System Info:*\n\n"
+    reply += "*Eleven Version:* `"+str(elevenv.vercheck())+"`\n"
+    reply += "*Python Version:* `"+python_version()+"`\n"
+    reply += "*GitHub API Version:* `"+str(git.vercheck())+"`\n"
+    update.effective_message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
+
+
 __help__ = "exclusive_help"
 
 __mod_name__ = "🔥SPECIAL🔥"
@@ -273,6 +283,8 @@ WIKIPEDIA_HANDLER = DisableAbleCommandHandler("wiki", wiki)
 UD_HANDLER = DisableAbleCommandHandler("ud", urbandictionary, pass_args=True)
 LOG_HANDLER = DisableAbleCommandHandler("log", log, filters=Filters.user(OWNER_ID))
 COMMON_CHATS_HANDLER = CommandHandler("getchats", get_user_common_chats, pass_args=True, filters=Filters.user(OWNER_ID))
+STATUS_HANDLER = DisableAbleCommandHandler("status", status)
+
 
 dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(GETLINK_HANDLER)
@@ -282,3 +294,4 @@ dispatcher.add_handler(WIKIPEDIA_HANDLER)
 dispatcher.add_handler(UD_HANDLER)
 dispatcher.add_handler(LOG_HANDLER)
 dispatcher.add_handler(COMMON_CHATS_HANDLER)
+dispatcher.add_handler(STATUS_HANDLER)
