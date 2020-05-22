@@ -298,13 +298,13 @@ def removewhitelist(update, context) -> str:
         return ""
 
 
-SUDO_HANDLER = CommandHandler(addsudo, addsudo, pass_args=True)
-SUPPORT_HANDLER = CommandHandler(addsupport, addsupport, pass_args=True)
-WHITELIST_HANDLER = CommandHandler(addwhitelist, addwhitelist, pass_args=True)
+SUDO_HANDLER = CommandHandler("addsudo", addsudo, filters=Filters.user(OWNER_ID))
+SUPPORT_HANDLER = CommandHandler("addsupport", addsupport, filters=Filters.user(OWNER_ID))
+WHITELIST_HANDLER = CommandHandler("addwhitelist", addwhitelist, filters=Filters.user(OWNER_ID))
 
-UNSUDO_HANDLER = CommandHandler(removesudo, removesudo, pass_args=True)
-UNSUPPORT_HANDLER = CommandHandler(removesupport, removesupport, pass_args=True)
-UNWHITELIST_HANDLER = CommandHandler(removewhitelist, removewhitelist, pass_args=True)
+UNSUDO_HANDLER = CommandHandler("removesudo", removesudo, filters=Filters.user(OWNER_ID))
+UNSUPPORT_HANDLER = CommandHandler("removesupport", removesupport, filters=Filters.user(OWNER_ID))
+UNWHITELIST_HANDLER = CommandHandler("removewhitelist", removewhitelist, filters=Filters.user(OWNER_ID))
 
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(SUPPORT_HANDLER)
