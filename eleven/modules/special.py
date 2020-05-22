@@ -8,6 +8,7 @@ import datetime
 import time
 import pyowm
 from typing import Optional, List
+from platform import python_version
 
 
 from pyowm import timeutils, exceptions
@@ -33,6 +34,7 @@ from eleven.modules.sql import languages_sql as langsql
 from eleven.modules.sql.users_sql import get_user_com_chats
 from eleven.modules.helper_funcs.chat_status import is_user_admin, user_admin
 import eleven.__main__ as elevenv
+import eleven.modules.helper_funcs.git_api as git
 
 
 from eleven.modules.languages import tl
