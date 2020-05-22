@@ -35,6 +35,11 @@ HELP_STRINGS = "help_text" #.format(dispatcher.bot.first_name, "" if not ALLOW_E
 
 DONATE_STRING = "donate_text"
 
+VERSION = "2.0"
+
+def vercheck() -> str:
+    return str(VERSION)
+
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
