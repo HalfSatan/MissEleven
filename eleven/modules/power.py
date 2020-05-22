@@ -36,7 +36,7 @@ def addsudo(update, context) -> str:
     user_member = context.bot.getChat(user_id)
     rt = ""
 
-    reply = check_user_id(user_id, bot)
+    reply = check_user_id(user_id, context.bot)
     if reply:
         message.reply_text(reply)
         return ""
@@ -88,7 +88,7 @@ def addsupport(update, context) -> str:
     user_member = context.bot.getChat(user_id)
     rt = ""
 
-    reply = check_user_id(user_id, bot)
+    reply = check_user_id(user_id, context.bot)
     if reply:
         message.reply_text(reply)
         return ""
@@ -139,7 +139,7 @@ def addwhitelist(update, context) -> str:
     user_member = context.bot.getChat(user_id)
     rt = ""
 
-    reply = check_user_id(user_id, bot)
+    reply = check_user_id(user_id, context.bot)
     if reply:
         message.reply_text(reply)
         return ""
@@ -190,7 +190,7 @@ def removesudo(update, context) -> str:
     user_id = extract_user(message, args)
     user_member = context.bot.getChat(user_id)
 
-    reply = check_user_id(user_id, bot)
+    reply = check_user_id(user_id, context.bot)
     if reply:
         message.reply_text(reply)
         return ""
@@ -230,7 +230,7 @@ def removesupport(update, context) -> str:
     user_id = extract_user(message, args)
     user_member = context.bot.getChat(user_id)
 
-    reply = check_user_id(user_id, bot)
+    reply = check_user_id(user_id, context.bot)
     if reply:
         message.reply_text(reply)
         return ""
@@ -270,7 +270,7 @@ def removewhitelist(update, context) -> str:
     user_id = extract_user(message, args)
     user_member = context.bot.getChat(user_id)
 
-    reply = check_user_id(user_id, bot)
+    reply = check_user_id(user_id, context.bot)
     if reply:
         message.reply_text(reply)
         return ""
