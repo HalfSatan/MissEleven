@@ -21,3 +21,4 @@ aiohttp
 tldextract
 pytz
 gtts
+gsearch
