@@ -523,7 +523,7 @@ be a sentence, encompass it with quotes, as such: `/addwarn "very angry" This is
  - /welcomemutetime <Xw/d/h/m>: if a user hasnt pressed the "unmute" button in the welcome message after a certain this time, they'll get unmuted automatically after this period of time.
  Note: if you want to reset the mute time to be forever, use /welcomemutetime 0m. 0 == eternal!
  - /setmutetext <new text>: Customise the "Click here to unmute" button obtained from enabling welcomemutes.
- - /resetmutetext: Reset teks tombol unmute menjadi default.
+ - /resetmutetext: Reset the unmute button text to default.
 
  - /welcomeverify <on/off>: Enable welcome verification with images and buttons, best for anti bots
  - /wtimeout <Xw/d/h/m>: Set welcome timeout, when user wasn't verify for X, then that user will be kicked/banned
