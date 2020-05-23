@@ -543,12 +543,13 @@ This also works with /goodbye.
  - /tr <to> <text>: translate text written or reply for any language to the intended language
  - /wiki <text>: search for text written from the wikipedia source
  - /ud <text>: search from urban dictionary
- - /reverse: Does a reverse image search of the media which it was replied to.
- 
+ - /google <text>: get google search result
+
  *Admin only:*
  - /thonkify <reply>/<args>: turns text into thonk text (only supports letters and none symbols for now)
  - /ping: check the speed of the bot
  - /tts <your text>: convert text to audio.
+ - /reverse: Does a reverse image search of the media which it was replied to.
 """
 }
 
