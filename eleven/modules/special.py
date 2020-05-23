@@ -7,6 +7,7 @@ import urllib
 import datetime
 import time
 import pyowm
+import subprocess
 from typing import Optional, List
 from platform import python_version
 
@@ -272,6 +273,14 @@ def status(update, context):
     reply += "*GitHub API Version:* `"+str(git.vercheck())+"`\n"
     update.effective_message.reply_text(reply, parse_mode=ParseMode.MARKDOWN)
 
+@spamcheck
+@run_async
+def google(update, context):
+        query = update.effective_message.text.split(" ", 1)
+        result_ = subprocess.run(['gsearch', str(query[1])], stdout=subprocess.PIPE)
+        result = str(result_.stdout.decode())
+        update.effective_message.reply_markdown('*Searching:*\n`' + str(query[1]) + '`\n\n*RESULTS:*\n' + result)
+
 
 __help__ = "exclusive_help"
 
@@ -286,6 +295,7 @@ UD_HANDLER = DisableAbleCommandHandler("ud", urbandictionary, pass_args=True)
 LOG_HANDLER = DisableAbleCommandHandler("log", log, filters=Filters.user(OWNER_ID))
 COMMON_CHATS_HANDLER = CommandHandler("getchats", get_user_common_chats, pass_args=True, filters=Filters.user(OWNER_ID))
 STATUS_HANDLER = DisableAbleCommandHandler("status", status)
+GOOGLE_HANDLER = DisableAbleCommandHandler("google", google)
 
 
 dispatcher.add_handler(PING_HANDLER)
@@ -297,3 +307,4 @@ dispatcher.add_handler(UD_HANDLER)
 dispatcher.add_handler(LOG_HANDLER)
 dispatcher.add_handler(COMMON_CHATS_HANDLER)
 dispatcher.add_handler(STATUS_HANDLER)
+dispatcher.add_handler(GOOGLE_HANDLER)
