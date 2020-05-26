@@ -26,9 +26,18 @@ def darts(update, context):
     url = f"https://api.telegram.org/bot{TOKEN}/sendDice?chat_id={chat.id}&emoji=🎯"
     requests.get(url)
 
+@run_async
+@spamcheck
+def basket(update, context):
+    chat = update.effective_chat
+    url = f"https://api.telegram.org/bot{TOKEN}/sendDice?chat_id={chat.id}&emoji=🏀"
+    requests.get(url)
+
 
 DICE_HANDLER = DisableAbleCommandHandler("dice", dice)
 DARTS_HANDLER = DisableAbleCommandHandler("darts", darts)
+BASKET_HANDLER = DisableAbleCommandHandler("basket", basket)
 
 dispatcher.add_handler(DICE_HANDLER)
 dispatcher.add_handler(DARTS_HANDLER)
+dispatcher.add_handler(BASKET_HANDLER)
