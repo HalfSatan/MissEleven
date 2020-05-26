@@ -1,3 +1,5 @@
+# Power initially took from https://github.com/AnimeKaizoku/SaitamaRobot.
+
 import html
 import json
 import os
