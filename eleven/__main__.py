@@ -35,6 +35,10 @@ HELP_STRINGS = "help_text" #.format(dispatcher.bot.first_name, "" if not ALLOW_E
 
 DONATE_STRING = "donate_text"
 
+SOURCE_STRING = """
+I'm built in python3, using the python-telegram-bot library, and am fully opensource - you can find what makes me tick [here](https://github.com/HalfSatan/MissEleven)
+"""
+
 VERSION = "2.0"
 
 def vercheck() -> str:
@@ -432,6 +436,23 @@ def get_settings(update, context):
     else:
         send_settings(chat.id, user.id, True)
 
+@run_async
+@spamcheck
+def source(update, context):
+    user = update.effective_message.from_user
+    chat = update.effective_chat  # type: Optional[Chat]
+
+    if chat.type == "private":
+        update.effective_message.reply_text(SOURCE_STRING, parse_mode=ParseMode.MARKDOWN)
+
+    else:
+        try:
+            context.bot.send_message(user.id, SOURCE_STRING, parse_mode=ParseMode.MARKDOWN)
+
+            update.effective_message.reply_text("You'll find in PM more info about my sourcecode.")
+        except Unauthorized:
+            update.effective_message.reply_text("Contact me in PM first to get source information.")
+
 
 @run_async
 @spamcheck
@@ -500,6 +521,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
+    source_handler = CommandHandler("source", source)
     donate_handler = CommandHandler("donate", donate)
     M_CONNECT_BTN_HANDLER = CallbackQueryHandler(m_connect_button, pattern=r"main_connect")
     M_SETLANG_BTN_HANDLER = CallbackQueryHandler(m_change_langs, pattern=r"main_setlang")
@@ -510,6 +532,7 @@ def main():
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
+    dispatcher.add_handler(source_handler)
     dispatcher.add_handler(donate_handler)
     dispatcher.add_handler(M_CONNECT_BTN_HANDLER)
     dispatcher.add_handler(M_SETLANG_BTN_HANDLER)
