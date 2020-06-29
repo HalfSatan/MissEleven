@@ -12,7 +12,7 @@ from typing import Optional, List
 from platform import python_version
 
 
-from pyowm import timeutils, exceptions
+from pyowm import exceptions
 from googletrans import Translator
 import wikipedia
 import base64
