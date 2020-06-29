@@ -12,7 +12,7 @@ from typing import Optional, List
 from platform import python_version
 
 
-from pyowm import exceptions
+#from pyowm import exceptions
 from googletrans import Translator
 import wikipedia
 import base64
@@ -302,7 +302,7 @@ dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(GETLINK_HANDLER)
 dispatcher.add_handler(LEAVECHAT_HANDLER)
 dispatcher.add_handler(TRANSLATE_HANDLER)
-dispatcher.add_handler(WIKIPEDIA_HANDLER)
+#dispatcher.add_handler(WIKIPEDIA_HANDLER)
 dispatcher.add_handler(UD_HANDLER)
 dispatcher.add_handler(LOG_HANDLER)
 dispatcher.add_handler(COMMON_CHATS_HANDLER)
